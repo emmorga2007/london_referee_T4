@@ -4,16 +4,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>London Referee Group</title>
+  <title>LRG | Programs</title>
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
   <!-- Header -->
   <?php include_once ('./header.php') ?>
 
-  <p>Home</p>
+  <p>Programs</p>
 
   <!-- Footer -->
   <?php include_once ('./footer.php') ?>
+
 </body>
 </html>
