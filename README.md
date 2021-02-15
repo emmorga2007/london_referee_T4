@@ -1,5 +1,7 @@
 # London referee
-*Updated Jan. 27, 2021*
+
+### Sass watch command from project root directory
+`sass --watch  assets/sass/style.scss:css/style.css --no-source-map`
 
 ### Project Description
 

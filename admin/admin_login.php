@@ -1,5 +1,27 @@
 <?php
-require_once('../load.php');
+require_once '../load.php';
+
+// Check if logged in
+if (isset($_SESSION['user_id'])) {
+  redirect_to('./admin_panel.php');
+}
+
+// Set ip
+$ip = $_SERVER['REMOTE_ADDR'];
+
+// If POST request with form request
+if (isset($_POST['submit'])) {
+  $username = trim($_POST['username']);
+  $password = trim($_POST['password']);
+
+  if (!empty($username) && !empty($password)) {
+    $result = login($username, $password, $ip);
+    $message = $result;
+  } else {
+    $message = 'Please fill out all required fields.';
+  }
+
+}
 ?>
 
 
@@ -14,12 +36,21 @@ require_once('../load.php');
 </head>
 <body>
   <!-- Header -->
-  <?php include_once('../includes/header.php') ?>
+  <?php include_once '../includes/header.php' ?>
 
   <h1>Admin Login</h1>
-  
+  <?php echo !empty($message)?$message:'' ?>
+  <form action="admin_login.php" method="POST">
+    <label for="username">Username:</label>
+    <input id="username" type="text" name="username" value="">
+    <br><br>
+    <label for="password" type='password'>Pasword: </label>
+    <input id="password" type="password" name="password">
+    <br><br>
+    <button type="submit" name="submit">Login</button>
+  </form>
 
   <!-- Footer -->
-  <?php include_once('../includes/footer.php') ?>
+  <?php include_once '../includes/footer.php' ?>
 </body>
 </html>

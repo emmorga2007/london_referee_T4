@@ -1,4 +1,4 @@
-<header>
+<header class="header">
 <h3 class="hidden">Navigation</h3>
   <ul>
     <li>

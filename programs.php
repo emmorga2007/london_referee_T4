@@ -1,3 +1,9 @@
+<?php
+require_once './load.php';
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,12 +15,12 @@
 </head>
 <body>
   <!-- Header -->
-  <?php include_once('./includes/header.php') ?>
+  <?php include_once './includes/header.php' ?>
 
   <h1>Programs</h1>
 
   <!-- Footer -->
-  <?php include_once('./includes/footer.php') ?>
+  <?php include_once './includes/footer.php' ?>
 
 </body>
 </html>
