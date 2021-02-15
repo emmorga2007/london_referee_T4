@@ -1,5 +1,5 @@
 <?php
-require_once('./load.php');
+require_once './load.php';
 ?>
 
 
@@ -15,11 +15,11 @@ require_once('./load.php');
 </head>
 <body>
     <!-- Header -->
-    <?php include_once('./includes/header.php') ?>
+    <?php include_once './includes/header.php' ?>
 
     <h1>Events</h1>
 
     <!-- Footer -->
-    <?php include_once('./includes/footer.php') ?>
+    <?php include_once './includes/footer.php' ?>
 </body>
 </html>
