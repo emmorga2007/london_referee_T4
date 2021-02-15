@@ -4,7 +4,7 @@ function login($username, $password, $ip)
 {
     $pdo = Database::getInstance()->getConnection();
 
-    // Get users
+    // Get user
     $get_user_query = 'SELECT * FROM tbl_user WHERE user_name = :username';
     $user_set = $pdo->prepare($get_user_query);
     $user_set->execute(
@@ -25,7 +25,7 @@ function login($username, $password, $ip)
         $found_user_id = $found_user['user_id'];
 
         // check if hashed password is matches password user entered
-        if ($password == $found_user['user_pass']) {
+        if (password_verify($password, $found_user['user_pass'])) {
             
           // Sets session variables
             $_SESSION['user_id'] = $found_user_id;

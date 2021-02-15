@@ -30,3 +30,11 @@ ul li a:hover {
 .header {
   background-color: #e8e2f5;
 }
+
+.admin-page {
+  padding: 50px 20px;
+  min-width: none;
+}
+.admin-page h1 {
+  margin: 10px 0;
+}

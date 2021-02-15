@@ -3,6 +3,10 @@
 ### Sass watch command from project root directory
 `sass --watch  assets/sass/style.scss:css/style.css --no-source-map`
 
+## Development Credentials
+Username: `admin`
+Password: `ZhWTdCE86l`
+
 ### Project Description
 
 Redesigning London Referee Group Website.  Creating a full website with admin access to control content, gallery, and add announcements.   

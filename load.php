@@ -12,3 +12,4 @@ session_start();
 require_once ABSPATH. '/config/database.php';
 require_once ADMIN_SCRIPT_PATH. '/login.php';
 require_once ADMIN_SCRIPT_PATH. '/function.php';
+require_once ADMIN_SCRIPT_PATH. '/user.php';
