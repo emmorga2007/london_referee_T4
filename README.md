@@ -5,7 +5,7 @@
 
 ## Development Credentials
 Username: `admin`
-Password: `ZhWTdCE86l`
+Password: `824ZLnkOGO`
 
 ### Project Description
 

@@ -137,7 +137,7 @@ function generatePassword()
 function getUsers() {
     $pdo = Database::getInstance()->getConnection();
 
-    $get_users_query = 'SELECT user_id, user_fname, user_email, user_locked FROM tbl_user';
+    $get_users_query = 'SELECT user_id, user_fname, user_email, user_locked, user_name FROM tbl_user';
     $users_set = $pdo->query($get_users_query);
     $users = $users_set->fetchAll(PDO::FETCH_ASSOC);
 
@@ -156,7 +156,7 @@ function deleteUser($id) {
     );
 
     if ($remove_user_status) {
-        redirect_to('../admin_users.php');
+        redirect_to('admin_users.php');
     } else {
         return 'Unable to Delete User';
     }
@@ -183,5 +183,79 @@ function passwordReset($id) {
         return 'New password is '.$pass;
     } else {
         return 'Unable to Delete User';
+    }
+}
+
+
+
+function updateUser($user_data)
+{
+    $pdo = Database::getInstance()->getConnection();
+
+    // Get details for
+    $name = $user_data['fname'];
+    $email = $user_data['email'];
+    $username = $user_data['username'];
+    $id = $user_data['id'];
+
+    // Check if feilds are empty
+    if (empty($name) || empty($email) || empty($username)) {
+        return 'Please fill out all feilds';
+    }
+
+    // Check if user exists
+    $get_user_query = 'SELECT * FROM tbl_user WHERE user_name = :username';
+    $user_set = $pdo->prepare($get_user_query);
+    $user_set->execute(
+        array(
+      ':username'=>$username
+    )
+    );
+
+    // continue if user does not already exists
+    if ($user_set->fetch(PDO::FETCH_ASSOC)) {
+        return 'Please pick another username';
+    }
+
+    // Generate Random Password
+    $password = generatePassword();
+
+    // Hash password for security reasons
+    $hashedPass = password_hash($password, PASSWORD_DEFAULT);
+
+    // Create query with values from form
+    $create_user_query = 'UPDATE tbl_user SET user_fname = :fname, user_name = :name, user_pass = :pass, user_email = :email';
+    $create_user_query .= ' WHERE user_id = :id';
+
+    // Prepare query
+    $create_user_set = $pdo->prepare($create_user_query);
+    $create_user_result = $create_user_set->execute(
+        array(
+      ':fname'=>$name,
+      ':name'=>$username,
+      ':pass'=>$hashedPass,
+      ':email'=>$email,
+      ':id'=>$id,
+    )
+    );
+
+    // If successful redirect else message
+    if ($create_user_result) {
+        $emailSuccess = sendNewUserEmail($email, $username, $name, $password);
+        if (!$emailSuccess) {
+            return 'Error sending email!, User Created';
+        }
+        
+        $message_template = '
+        <strong>Account Updated</strong>
+        <p>Name: %s</p>
+        <p>Username: %s</p>
+        <p>Email: %s</p>
+        <p>Password: %s</p>
+        ';
+        $return_message = sprintf($message_template, $name, $username, $email, $password);
+        return $return_message;
+    } else {
+        return 'Error updating user!';
     }
 }

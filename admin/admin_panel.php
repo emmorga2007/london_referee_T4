@@ -16,12 +16,11 @@ confirm_logged_in();
 </head>
 <body> <!-- Header -->
   <?php include_once '../includes/header.php' ?>
+  <?php include_once './templates/admin_header.php' ?>
   <main>
+    
     <div class="admin-page">
       <h1>Admin Panel</h1>
-      <a class="options" href="admin_createuser.php">Create User</a>
-      <a class="options" href="admin_logout.php">Sign Out</a>
-      <a class="options" href="admin_users.php">Users</a>
     </div>
   </main>
   <!-- Footer -->

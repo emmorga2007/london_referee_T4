@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
   <?php include_once '../includes/header.php' ?>
 
   <h1>Admin Login</h1>
-  <?php echo !empty($message)?$message:'' ?>
+  <?php echo !empty($message)?'<div class="status">'.$message.'</div>':'' ?>
   <form action="admin_login.php" method="POST">
     <label for="username">Username:</label>
     <input id="username" type="text" name="username" value="">
