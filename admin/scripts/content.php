@@ -14,6 +14,19 @@ function getContent(&$content) {
   }
 }
 
+function deleteFile($id) {
+  $pdo = Database::getInstance()->getConnection();
+
+  // Add File to database
+  $delete_content = 'DELETE FROM tbl_content WHERE id = :id';
+  $deleted_operation = $pdo->prepare($delete_content);
+  $deleted_operation->execute(
+      array(
+      ':id'=>$id
+      )
+  );
+}
+
 function uploadFile() {
     $path = "../../content/";
     $target_file = $path . basename($_FILES["fileToUpload"]["name"]);

@@ -40,7 +40,7 @@ if ($contentStatus) {
       <?php foreach ($content as $item):?>
         <div>
           <div class="controls">
-            <a href="#">Delete</a>
+            <a href="admin_deletecontent.php?id=<?php echo $item['id']; ?>">Delete</a>
             <a href="<?php echo ROOT_PATH ?>/content/<?php echo $item['path']; ?>">Link</a>
           </div>
         <?php if ($item['type'] == 'video'): ?>
