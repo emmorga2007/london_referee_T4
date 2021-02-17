@@ -32,9 +32,56 @@ ul li a:hover {
 }
 
 .admin-page {
-  padding: 50px 20px;
+  padding: 20px;
   min-width: none;
 }
 .admin-page h1 {
   margin: 10px 0;
+}
+.admin-page table {
+  width: 100%;
+  margin-top: 20px;
+  border: 1px solid #000;
+}
+.admin-page th {
+  background-color: #c7c7c7;
+  padding: 4px;
+}
+.admin-page tr:nth-of-type(2n + 1) {
+  background-color: #f2f2f2;
+}
+
+.admin-header {
+  display: flex;
+  flex-direction: row;
+  background-color: #414141;
+  color: #f2f2f2;
+}
+.admin-header a {
+  color: inherit;
+  text-decoration: none;
+}
+.admin-header a:hover {
+  background-color: #212121;
+}
+.admin-header > * {
+  padding: 10px;
+}
+.admin-header h4 {
+  margin: 0;
+  padding-right: 60px;
+}
+
+.options-left {
+  margin-left: auto;
+}
+
+.sub-nav {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+}
+.sub-nav .link {
+  margin-left: auto;
 }

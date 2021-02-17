@@ -1,9 +1,63 @@
 .admin-page {
-  padding: 50px 20px;
+  padding: 20px;
   min-width: none;
 
   h1 {
     margin: 10px 0;
   }
 
+  table {
+    width: 100%;
+    margin-top: 20px;
+    border: 1px solid #000;
+  }
+
+  th {
+    background-color: rgb(199, 199, 199);
+    padding: 4px;
+  }
+
+
+  tr:nth-of-type(2n + 1) {
+    background-color: rgb(242, 242, 242);
+  }
+}
+
+.admin-header {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(65, 65, 65);
+  color: rgb(242, 242, 242);
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      background-color: rgb(33, 33, 33);
+    }
+  }
+
+  & > * {
+    padding: 10px;
+  }
+
+  h4 {
+    margin: 0;
+    padding-right: 60px;
+  }
+}
+
+.options-left {
+  margin-left: auto;
+}
+
+.sub-nav {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+
+  & .link {
+    margin-left: auto;
+  }
 }
