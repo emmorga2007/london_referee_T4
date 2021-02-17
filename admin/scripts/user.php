@@ -196,9 +196,7 @@ function updateUser($user_data)
     $name = $user_data['fname'];
     $email = $user_data['email'];
     $username = $user_data['username'];
-
-    // Should send email to new user?
-    $sendemail = $user_data['sendemail'];
+    $id = $user_data['id'];
 
     // Check if feilds are empty
     if (empty($name) || empty($email) || empty($username)) {
@@ -213,10 +211,9 @@ function updateUser($user_data)
       ':username'=>$username
     )
     );
-    $existing_user = $user_set->fetch(PDO::FETCH_ASSOC);
 
     // continue if user does not already exists
-    if ($existing_user) {
+    if ($user_set->fetch(PDO::FETCH_ASSOC)) {
         return 'Please pick another username';
     }
 
@@ -227,7 +224,7 @@ function updateUser($user_data)
     $hashedPass = password_hash($password, PASSWORD_DEFAULT);
 
     // Create query with values from form
-    $create_user_query = 'UPDATE tbl_user SET user_fname = :fname, user_name = :name, user_pass = :pass, user_email = :email, user_success_date';
+    $create_user_query = 'UPDATE tbl_user SET user_fname = :fname, user_name = :name, user_pass = :pass, user_email = :email';
     $create_user_query .= ' WHERE user_id = :id';
 
     // Prepare query
@@ -238,21 +235,19 @@ function updateUser($user_data)
       ':name'=>$username,
       ':pass'=>$hashedPass,
       ':email'=>$email,
-      ':success_date'=>$init_datetime,
+      ':id'=>$id,
     )
     );
 
     // If successful redirect else message
     if ($create_user_result) {
-        if ($sendemail) {
-            $emailSuccess = sendNewUserEmail($email, $username, $name, $password);
-            if (!$emailSuccess) {
-                return 'Error sending email!, User Created';
-            }
+        $emailSuccess = sendNewUserEmail($email, $username, $name, $password);
+        if (!$emailSuccess) {
+            return 'Error sending email!, User Created';
         }
         
         $message_template = '
-        <strong>Account Created</strong>
+        <strong>Account Updated</strong>
         <p>Name: %s</p>
         <p>Username: %s</p>
         <p>Email: %s</p>
@@ -261,6 +256,6 @@ function updateUser($user_data)
         $return_message = sprintf($message_template, $name, $username, $email, $password);
         return $return_message;
     } else {
-        return 'Error creating user!';
+        return 'Error updating user!';
     }
 }

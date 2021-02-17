@@ -3,18 +3,13 @@
 require_once '../load.php';
 confirm_logged_in();
 
-
-
 if (isset($_POST['submit'])) {
-    $sendemail = isset($_POST['sendemail']);
-
     // Data of new user
     $data = array(
     'fname'=>trim($_POST['fname']),
     'username'=>trim($_POST['username']),
     'email'=>trim($_POST['email']),
-    'id'=>trim($_POST['id']),
-    'sendemail'=>$sendemail,
+    'id'=>trim($_POST['id'])
   );
     // Return any errors and put in $message
     $message =  updateUser($data);
@@ -28,10 +23,11 @@ if (isset($_GET['id']) && isset($_GET['type'])) {
   } else if ($type == 'passwordreset') {
     $message = passwordReset($_GET['id']);
   } else if ($type != 'update') {
-    redirect_to('admin_users.php');
+    $message = 'not right w';
   }
-} else {
-  redirect_to('admin_users.php');
+} else if (!isset($_POST['submit'])) {
+  $message = 'not right';
+  // redirect_to('admin_users.php');
 }
 
 ?>
@@ -51,7 +47,7 @@ if (isset($_GET['id']) && isset($_GET['type'])) {
   <h1>Update User</h1>
       <?php echo !empty($message)?'<div class="status">'.$message.'</div>':'' ?>
       <form action="admin_updateuser.php" method="post">
-        <input type="hidden" name="id" value="<?php echo $_GET['type']; ?>">
+        <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
         <label for="fname">First Name</label>
         <input type="text" id="fname" name="fname" value="">
         <br><br>
@@ -60,9 +56,6 @@ if (isset($_GET['id']) && isset($_GET['type'])) {
         <br><br>
         <label for="email">Email</label>
         <input type="email" id="email" name="email" value="">
-        <br><br>
-        <label for="sendemail">Send New Credentials to User Email?</label>
-        <input type="checkbox" id="sendemail" name="sendemail">
         <br><br>
         <button type="submit" name="submit">Update User</button>
       </form>
