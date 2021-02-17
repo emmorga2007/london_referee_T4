@@ -2,9 +2,17 @@
 require_once '../../load.php';
 confirm_logged_in();
 
+$content = [];
+
 if (isset($_POST["submit"])) {
     $message = uploadFile();
 }
+
+$contentStatus = getContent($content);
+if ($contentStatus) {
+  $message = $contentStatus;
+}
+
 ?>
 
 
@@ -21,13 +29,30 @@ if (isset($_POST["submit"])) {
   <?php include_once '../../includes/header.php' ?>
   <?php include_once '../templates/admin_header.php' ?>
   <div class="admin-page">
-  <h1>Gallery Upload</h1>
-      <?php echo !empty($message)?'<div class="status">'.$message.'</div>':'' ?>
-      <form action="admin_content.php" method="post" enctype="multipart/form-data">
-        <label for="fileToUpload">Select image to upload:</label>
-        <input type="file" name="fileToUpload" id="fileToUpload" required>
-        <input type="submit" value="Upload Image" name="submit">
-      </form>
+    <h1>Gallery Upload</h1>
+    <?php echo !empty($message)?'<div class="status">'.$message.'</div>':'' ?>
+    <form action="admin_content.php" method="post" enctype="multipart/form-data">
+      <label for="fileToUpload">Select image to upload:</label>
+      <input type="file" name="fileToUpload" id="fileToUpload" required>
+      <input type="submit" value="Upload File" name="submit">
+    </form>
+    <section class="gallery">
+      <?php foreach ($content as $item):?>
+        <div>
+          <div class="controls">
+            <a href="#">Delete</a>
+            <a href="<?php echo ROOT_PATH ?>/content/<?php echo $item['path']; ?>">Link</a>
+          </div>
+        <?php if ($item['type'] == 'video'): ?>
+          <video src="<?php echo ROOT_PATH ?>/content/<?php echo $item['path']; ?>" controls></video>
+        <?php elseif($item['type'] == 'image'): ?>
+          <img src="<?php echo ROOT_PATH ?>/content/<?php echo $item['path']; ?>"
+          alt="<?php echo $item['name']; ?>">
+        <?php endif ?>
+          
+        </div>
+      <?php endforeach?>  
+    </section>
   </div>
   <!-- Footer -->
   <?php include_once '../../includes/footer.php' ?>

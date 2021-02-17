@@ -13,7 +13,6 @@ function login($username, $password, $ip)
     )
     );
 
-
     // If user is found, NOTE: they are not authenticated yet
     if ($found_user = $user_set->fetch(PDO::FETCH_ASSOC)) {
         // Check if found user is locked out
