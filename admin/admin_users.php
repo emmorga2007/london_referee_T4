@@ -26,6 +26,7 @@ $users = getUsers();
       <table>
         <tr>
           <th>Name</th>
+          <th>Username</th>
           <th>Email</th>
           <th>Locked?</th>
           <th>Actions</th>
@@ -33,12 +34,13 @@ $users = getUsers();
         <?php foreach ($users as $user):?>
           <tr>
             <td><?php echo $user['user_fname']; ?></td>
+            <td><?php echo $user['user_name']; ?></td>
             <td><?php echo $user['user_email']; ?></td>
             <td><input type="checkbox" <?php echo $user['user_locked'] == 1 ? 'checked' : ''?>></td>
             <td>
-              <a href="update_user.php?id=<?php echo $user['user_id']; ?>&type=passwordreset">Reset Password</a>
-              <a href="update_user.php?id=<?php echo $user['user_id']; ?>&type=update">Update</a>
-              <a href="update_user.php?id=<?php echo $user['user_id']; ?>&type=delete">Delete</a>
+              <a href="admin_updateuser.php?id=<?php echo $user['user_id']; ?>&type=passwordreset">Reset Password</a>
+              <a href="admin_updateuser.php?id=<?php echo $user['user_id']; ?>&type=update">Update</a>
+              <a href="admin_updateuser.php?id=<?php echo $user['user_id']; ?>&type=delete">Delete</a>
             </td>
           </tr>
         <?php endforeach?>
