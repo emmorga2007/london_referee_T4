@@ -17,15 +17,20 @@ function createUser($user_data)
     $name = $user_data['fname'];
     $email = $user_data['email'];
     $username = $user_data['username'];
-    $user_level = $user_data['level'];
+    $level = $user_data['level'];
+
+    // Set $user_level to empty if not included
+    if (empty($level)) {
+        $level = '0';
+    }
 
     // Check if feilds are empty
-    if (empty($name) || empty($email) || empty($username) || empty($user_level)) {
+    if (empty($name) || empty($email) || empty($username)) {
         return 'Please fill out all feilds';
     }
 
     // Check if user exists
-    if (getUsersByUsername($user_username)) {
+    if (getUsersByUsername($username)) {
         return 'Please pick another username';
     }
 
@@ -51,7 +56,7 @@ function createUser($user_data)
       ':pass'=>$password,
       ':email'=>$email,
       ':success_date'=>$init_datetime,
-      ':user_level'=>$user_level,
+      ':user_level'=>$level,
     )
     );
 
@@ -173,6 +178,7 @@ function updateUser($user_data)
     $user_id = $user_data['id'];
     $user_level = $user_data['level'];
 
+    // Set $user_level to empty if not included
     if (empty($user_level)) {
         $user_level = '0';
     }
@@ -182,19 +188,15 @@ function updateUser($user_data)
         return 'Please fill out all feilds';
     }
 
+    $old_user = getUsersByUsername($user_username);
+
     // continue if user does not already exists
-    if (!getUsersByUsername($user_username)) {
+    if (!$old_user) {
         return 'User does not exist';
     }
 
-    // Generate Random Password
-    $password = generatePassword();
-
-    // Hash password for security reasons
-    // $hashedPass = password_hash($password, PASSWORD_DEFAULT);
-
     // Create query with values from form
-    $create_user_query = 'UPDATE tbl_user SET user_fname = :fname, user_name = :name, user_pass = :pass, user_email = :email, user_level = :level';
+    $create_user_query = 'UPDATE tbl_user SET user_fname = :fname, user_name = :name, user_email = :email, user_level = :level';
     $create_user_query .= ' WHERE user_id = :id';
 
     // Prepare query
@@ -203,7 +205,6 @@ function updateUser($user_data)
         array(
       ':fname'=>$user_name,
       ':name'=>$user_username,
-      ':pass'=>$password,
       ':email'=>$user_email,
       ':id'=>$user_id,
       ':level'=>$user_level 
@@ -212,7 +213,7 @@ function updateUser($user_data)
 
     // If successful redirect else message
     if ($create_user_result) {
-        $emailSuccess = sendNewUserEmail($user_email, $user_username, $user_name, $password);
+        $emailSuccess = sendNewUserEmail($user_email, $user_username, $user_name, $old_user['user_pass']);
         if (!$emailSuccess) {
             return 'Error sending email!, User Created';
         }
@@ -224,7 +225,7 @@ function updateUser($user_data)
         <p>Email: %s</p>
         <p>Password: %s</p>
         ';
-        $return_message = sprintf($message_template, $user_name, $user_username, $user_email, $password);
+        $return_message = sprintf($message_template, $user_name, $user_username, $user_email, $old_user['user_pass']);
         return $return_message;
     } else {
         return 'Error updating user!';

@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
     'fname'=>trim($_POST['fname']),
     'username'=>trim($_POST['username']),
     'email'=>trim($_POST['email']),
-    'user_level'=>trim($_POST['level'])
+    'level'=>trim($_POST['level'])
   );
     // Return any errors and put in $message
     $message =  createUser($data);
@@ -39,18 +39,19 @@ if (isset($_POST['submit'])) {
       
       <form action="admin_createuser.php" method="post">
         <label for="fname">First Name</label>
-        <input type="text" id="fname" name="fname" value="">
+        <input type="text" id="fname" name="fname" value="" required>
         <br><br>
         <label for="username">Username</label>
-        <input type="text" id="username" name="username" value="">
+        <input type="text" id="username" name="username" value="" required>
         <br><br>
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" value="">
+        <input type="email" id="email" name="email" value="" required>
         <br><br>
         <label for="level">User Level</label>
-        <select name="level" id="level">
-        <?php foreach (getUserLevelMap() as $value => $title):?>
-          <option value="<?php echo $value; ?>"><?php echo $title; ?></option>
+        <select name="level" id="level" required>
+        <?php $array = getUserLevelMap();
+        foreach ($array as $value => $title):?>
+          <option value="<?php echo $value; ?>" <?php echo (reset($array) == $title) ? 'selected': ''; ?>><?php echo $title; ?></option>
         <?php endforeach?>
         </select>
         <br><br>
