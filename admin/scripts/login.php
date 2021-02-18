@@ -15,6 +15,8 @@ function login($username, $password, $ip)
 
     // If user is found, NOTE: they are not authenticated yet
     if ($found_user = $user_set->fetch(PDO::FETCH_ASSOC)) {
+
+
         // Check if found user is locked out
         if ($found_user['user_locked'] == 1) {
             return 'Account Locked';
@@ -24,11 +26,12 @@ function login($username, $password, $ip)
         $found_user_id = $found_user['user_id'];
 
         // check if hashed password is matches password user entered
-        if (password_verify($password, $found_user['user_pass'])) {
+        if ($password == $found_user['user_pass']) {
             
-          // Sets session variables
+            // Sets session variables
             $_SESSION['user_id'] = $found_user_id;
             $_SESSION['user_name'] = $found_user['user_fname'];
+            $_SESSION['user_level'] = $found_user['user_level'];
             $_SESSION['user_success_date'] = $found_user['user_success_date'];
             $_SESSION['user_total_logins'] = $found_user['user_total_logins'];
 
@@ -92,10 +95,14 @@ function login($username, $password, $ip)
     }
 }
 
-function confirm_logged_in()
+function confirm_logged_in($requre_admin_level=false)
 {
     if (!isset($_SESSION['user_id'])) {
-        redirect_to('./admin_login.php');
+        redirect_to(ROOT_PATH.'/admin/admin_login.php');
+    }
+
+    if (!empty($requre_admin_level) && empty($_SESSION['user_level'])) {
+        redirect_to(ROOT_PATH.'/admin/admin_panel.php');
     }
 }
 

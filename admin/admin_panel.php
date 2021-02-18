@@ -21,6 +21,7 @@ confirm_logged_in();
     
     <div class="admin-page">
       <h1>Admin Panel</h1>
+      <h3>Your Level: <?php echo getUserLevelMap()[$_SESSION['user_level']]; ?></h3>
     </div>
   </main>
   <!-- Footer -->

@@ -1,21 +1,21 @@
 <?php
 require_once '../../load.php';
-confirm_logged_in();
+confirm_logged_in(true);
 
 
 if (isset($_POST['submit'])) {
-    $sendemail = isset($_POST['sendemail']);
 
     // Data of new user
     $data = array(
     'fname'=>trim($_POST['fname']),
     'username'=>trim($_POST['username']),
     'email'=>trim($_POST['email']),
-    'sendemail'=>$sendemail,
+    'user_level'=>trim($_POST['level'])
   );
     // Return any errors and put in $message
     $message =  createUser($data);
-}
+} 
+
 ?>
 
 
@@ -47,8 +47,12 @@ if (isset($_POST['submit'])) {
         <label for="email">Email</label>
         <input type="email" id="email" name="email" value="">
         <br><br>
-        <label for="sendemail">Send Credentials to User Email?</label>
-        <input type="checkbox" id="sendemail" name="sendemail">
+        <label for="level">User Level</label>
+        <select name="level" id="level">
+        <?php foreach (getUserLevelMap() as $value => $title):?>
+          <option value="<?php echo $value; ?>"><?php echo $title; ?></option>
+        <?php endforeach?>
+        </select>
         <br><br>
         <button type="submit" name="submit">Add User</button>
       </form>
