@@ -1,7 +1,7 @@
 <?php 
 
 require_once '../../load.php';
-confirm_logged_in();
+confirm_logged_in(true);
 
 if (isset($_POST['submit'])) {
     // Data of new user
@@ -9,8 +9,10 @@ if (isset($_POST['submit'])) {
     'fname'=>trim($_POST['fname']),
     'username'=>trim($_POST['username']),
     'email'=>trim($_POST['email']),
-    'id'=>trim($_POST['id'])
+    'id'=>trim($_POST['id']),
+    'level'=>trim($_POST['level']),
   );
+
     // Return any errors and put in $message
     $message =  updateUser($data);
 }
@@ -18,15 +20,18 @@ if (isset($_POST['submit'])) {
 
 if (isset($_GET['id']) && isset($_GET['type'])) {
   $type = $_GET['type'];
+  $id = $_GET['id'];
   if ($type == 'delete') {
-    $message = deleteUser($_GET['id']);
+    $message = deleteUser($id);
   } else if ($type == 'passwordreset') {
-    $message = passwordReset($_GET['id']);
-  } else if ($type != 'update') {
-    $message = 'not right w';
+    $message = passwordReset($id);
+  } else if ($type == 'update') {
+    $user = getUsersById($id);
+  } else {
+    $message = 'Not a valid type';
   }
 } else if (!isset($_POST['submit'])) {
-  $message = 'not right';
+  $message = 'Not a valid item';
   // redirect_to('admin_users.php');
 }
 
@@ -46,19 +51,30 @@ if (isset($_GET['id']) && isset($_GET['type'])) {
   <?php include_once '../templates/admin_header.php' ?>
   <h1>Update User</h1>
       <?php echo !empty($message)?'<div class="status">'.$message.'</div>':'' ?>
-      <form action="admin_updateuser.php" method="post">
-        <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
+
+      <?php if(!empty($user)): ?>
+        <form action="admin_updateuser.php" method="post">
+        <input type="hidden" name="id" value="<?php echo $user['user_id']; ?>">
         <label for="fname">First Name</label>
-        <input type="text" id="fname" name="fname" value="">
+        <input type="text" id="fname" name="fname" value="<?php echo $user['user_fname']; ?>">
         <br><br>
         <label for="username">Username</label>
-        <input type="text" id="username" name="username" value="">
+        <input type="text" id="username" name="username" value="<?php echo $user['user_name']; ?>">
         <br><br>
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" value="">
+        <input type="email" id="email" name="email" value="<?php echo $user['user_email']; ?>">
+        <br><br>
+        <label for="level">User Level</label>
+        <select name="level" id="level">
+        <?php foreach (getUserLevelMap() as $value => $title):?>
+          <option value="<?php echo $value; ?>" <?php echo ($user['user_level'] == $value) ? 'selected' : '' ?>><?php echo $title; ?></option>
+        <?php endforeach?>
+        </select>
         <br><br>
         <button type="submit" name="submit">Update User</button>
       </form>
+      <?php endif ?>
+      
   <!-- Footer -->
   <?php include_once '../../includes/footer.php' ?>
 </body> 

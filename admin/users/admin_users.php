@@ -1,6 +1,6 @@
 <?php
 require_once '../../load.php';
-confirm_logged_in();
+confirm_logged_in(true);
 $users = getUsers();
 ?>
 
@@ -28,7 +28,7 @@ $users = getUsers();
           <th>Name</th>
           <th>Username</th>
           <th>Email</th>
-          <th>Locked?</th>
+          <th>User Level</th>
           <th>Actions</th>
         </tr>
         <?php foreach ($users as $user):?>
@@ -36,7 +36,7 @@ $users = getUsers();
             <td><?php echo $user['user_fname']; ?></td>
             <td><?php echo $user['user_name']; ?></td>
             <td><?php echo $user['user_email']; ?></td>
-            <td><input type="checkbox" <?php echo $user['user_locked'] == 1 ? 'checked' : ''?>></td>
+            <td><?php echo $user['user_level']; ?></td>
             <td>
               <a href="admin_updateuser.php?id=<?php echo $user['user_id']; ?>&type=passwordreset">Reset Password</a>
               <a href="admin_updateuser.php?id=<?php echo $user['user_id']; ?>&type=update">Update</a>
