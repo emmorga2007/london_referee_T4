@@ -41,10 +41,12 @@ if ($contentStatus) {
         <div>
           <div class="controls">
             <a href="admin_deletecontent.php?id=<?php echo $item['id']; ?>">Delete</a>
-            <a href="<?php echo ROOT_PATH ?>/content/<?php echo $item['path']; ?>">Link</a>
+            <h4><?php echo $item['name']; ?></h4>
+            <p>Type: <?php echo $item['type']; ?></p>
+            <a href="<?php echo ROOT_PATH ?>/content/<?php echo $item['path']; ?>" target="_BLANK">Link</a>
           </div>
         <?php if ($item['type'] == 'video'): ?>
-          <video src="<?php echo ROOT_PATH ?>/content/<?php echo $item['path']; ?>" controls></video>
+          <video src="<?php echo ROOT_PATH ?>/content/<?php echo $item['path']; ?>"></video>
         <?php elseif($item['type'] == 'image'): ?>
           <img src="<?php echo ROOT_PATH ?>/content/<?php echo $item['path']; ?>"
           alt="<?php echo $item['name']; ?>">

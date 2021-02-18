@@ -4,7 +4,7 @@
 function getContent(&$content) {
   $pdo = Database::getInstance()->getConnection();
 
-  // Add File to database
+  // get files to database
   $get_content = 'SELECT * FROM tbl_content';
   $runQuery = $pdo->query($get_content);
   if ($runQuery) {
@@ -17,6 +17,19 @@ function getContent(&$content) {
 function deleteFile($id) {
   $pdo = Database::getInstance()->getConnection();
 
+  // get file to database
+  $content_query = 'SELECT * FROM tbl_content WHERE id = :id';
+  $content = $pdo->prepare($content_query);
+  $content->execute(
+      array(
+      ':id'=>$id
+      )
+  );
+  $content_item = $content->fetch(PDO::FETCH_ASSOC);
+
+  unlink('../../content/'.$content_item['path']);
+
+
   // Add File to database
   $delete_content = 'DELETE FROM tbl_content WHERE id = :id';
   $deleted_operation = $pdo->prepare($delete_content);
@@ -25,20 +38,28 @@ function deleteFile($id) {
       ':id'=>$id
       )
   );
+
+
 }
 
 function uploadFile() {
+
     $path = "../../content/";
     $target_file = $path . basename($_FILES["fileToUpload"]["name"]);
     $status = true;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
     $contentType = ''; 
     
+
+    echo $mime;
+    exit;
     // Get mime type
     $mime = mime_content_type($_FILES["fileToUpload"]["tmp_name"]);
     // Is movie
 
-    if(strstr($mime, "video/")){
+  
+
+    if (strstr($mime, "video/")){
         if ($imageFileType != "mp4" && $imageFileType != "webm") {
           return "Error: Only JPG, JPEG, PNG, GIF, MP4, & WEBM files are allowed.";
         }
@@ -48,19 +69,23 @@ function uploadFile() {
           return "Error: Video too large";
         } 
 
+        echo 'passed';
+        exit;
+
         $contentType = 'video';
     
     // Is image
-    }else if(strstr($mime, "image/")){
+    } else if (strstr($mime, "image/")){
         if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
           return "Error: Only JPG, JPEG, PNG, GIF, MP4, & WEBM files are allowed.";
         }
 
-        // Image size larger than 5mb
-        if ($_FILES["fileToUpload"]["size"] > 5000000) {
+        // Image size larger than 10mb
+        if ($_FILES["fileToUpload"]["size"] > 10000000) {
           return "Error: Image too large";
         }
-        
+        echo 'passed image';
+        exit;
         $contentType = 'image';
 
     } else {
