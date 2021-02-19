@@ -5,6 +5,25 @@
 body {
     margin: 0;
     padding: 0;
+    max-width:2000px;
+}
+
+h2{
+    font-family: $header-font;
+    font-size: $header-size;
+    color: $white;
+}
+
+p{
+    color:$white;
+    font-family: $copy-font;
+    font-size:$copy-size;
+}
+
+a{
+    color:$white;
+    font-family: $copy-font;
+    font-size:$copy-size;
 }
 
 ul {
@@ -19,8 +38,20 @@ ul {
         text-decoration: none;
         padding: 10px;
 
-        &:hover { 
+        &:hover {
           opacity: 0.5;
-          }
+        }
     }
+}
+
+.cta-button{
+  display: flex;
+  width:fit-content;
+  border-radius: $rad;
+  background: $highlight;
+  a{padding: .5em 2em ;}
+}
+
+.highlight {
+    color: $highlight;
 }

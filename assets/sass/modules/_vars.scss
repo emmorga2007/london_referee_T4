@@ -1,13 +1,23 @@
 
-// BRAND COLORS
+//* BRAND COLORS
 
-$color_orange: #F05623;
-$color_orange_alt: #ED6A21;
-$color_blue: #3343B5;
-$color_dark_blue: #212564;
-$color_grey: #1E1E1E;
-$color_white: #F5F5FF;
+$highlight: #dd2222;
+$orange_alt: #ED6A21;
+$blue: #3343B5;
+$dark_blue: #212564;
+$grey: #232326;
+$black: #141416;
+$white: #F5F5FF;
 
-// OTHER COLORS
+//* OTHER COLORS
 
-// OTHER VARS
+//* Fonts
+$header-font: 'cabin', Helvetica, Arial, sans-serif;
+$header-size: 2rem;
+
+$copy-font: 'cabin', Helvetica, Arial, sans-serif;
+$copy-size: 1.2rem;
+
+//* OTHER VARS
+$rad:.5em;
+$shadow: 2px 2px 2px rgba(0,0,0,0.5);
