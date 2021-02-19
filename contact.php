@@ -13,13 +13,14 @@ require_once './load.php';
   <title>LRG | Contact</title>
   <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
-   <!-- Header -->
-   <?php include_once './includes/header.php' ?>
+  <main>
+    <header>
+      <?php include_once './includes/nav.php' ?>
+    </header>
 
     <h1>Contact</h1>
 
-    <!-- Footer -->
+    <!--! Footer -->
     <?php include_once './includes/footer.php' ?>
-</body>
+  </main>
 </html>

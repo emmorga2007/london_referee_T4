@@ -13,12 +13,15 @@ require_once './load.php';
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <!-- Header -->
-    <?php include_once './includes/header.php' ?>
+  <main>
+    <header>
+      <?php include_once './includes/nav.php' ?>
+    </header>
 
-    <h1>About Us</h1>
+    <h1>About</h1>
 
-    <!-- Footer -->
+    <!--! Footer -->
     <?php include_once './includes/footer.php' ?>
+  </main>
 </body>
 </html>
