@@ -26,24 +26,6 @@ a{
     font-size:$copy-size;
 }
 
-ul {
-    margin: 0;
-    padding: 10px;
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-
-    li a {
-        color: inherit;
-        text-decoration: none;
-        padding: 10px;
-
-        &:hover {
-          opacity: 0.5;
-        }
-    }
-}
-
 .cta-button{
   display: flex;
   width:fit-content;

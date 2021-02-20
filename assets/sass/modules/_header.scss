@@ -3,7 +3,34 @@
   display: grid;
   background: #000;
   grid-template-rows: auto 1fr;
+
+  nav{
+    height: 3em;
+    padding:1em 3em;
+    background-color:$grey;
+    color:$white;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    color: $white;
+    font-family: $header-font;
+    font-size:1.2em;
+    ul{
+      padding: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      li a {
+        padding: .5em 1em;
+        &:hover{opacity: 0.5;}
+      }
+      li:last-of-type{margin-left: 15px;}
+    }
+  }
 }
+
+
 
 .logo-con{
   display: flex;
@@ -23,20 +50,6 @@
   }
 }
 
-nav{
-  height: 3em;
-  padding:1em 3em;
-  background-color:$grey;
-  color:$white;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  color: $white;
-  font-family: $header-font;
-  font-size:1.2em;
-}
-
 .landing {
   display: grid;
   grid-template-columns: 33vw 1fr 50vw;
@@ -49,7 +62,7 @@ nav{
     flex-direction: column;
     justify-content: center;
     clip-path: polygon(0 0, 80% 0%, 100% 100%, 0% 100%);
-    h2{text-transform: uppercase; font-size:3em}
+    h2{text-transform: uppercase;}
     p{margin: 1em 0;}
   }
 }

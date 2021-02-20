@@ -15,7 +15,7 @@
     <li>
       <a href="<?php echo ROOT_PATH .'/contact.php'?>">Contact</a>
     </li>
-    <li>
+    <li class="cta-button">
       <a href="<?php echo ROOT_PATH .'/contact.php'?>">Apply Now</a>
     </li>
   </ul>

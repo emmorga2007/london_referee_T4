@@ -54,6 +54,11 @@ require_once './load.php';
     </header>
 
     <section class="brief-con">
+
+      <div class="brief-img-con">
+        <img src="" alt="">
+      </div>
+
       <div class="brief-info">
         <h2>Who is LRG</h2>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque deserunt exercitationem in minus aut, iusto accusamus voluptatem et cupiditate eveniet!</p>
@@ -61,13 +66,14 @@ require_once './load.php';
           <a href="">Learn More</a>
         </div>
       </div>
+
     </section>
 
     <section class="member-con">
       <div class="angle-img">
         <img src="" alt="">
       </div>
-      <div class="member-info">
+      <div class="member-info adult">
         <h2>Membership</h2>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque deserunt exercitationem in minus aut, iusto accusamus voluptatem et cupiditate eveniet!</p>
         <div class="cta-button">
@@ -80,7 +86,7 @@ require_once './load.php';
       <div class="angle-img">
         <img src="" alt="">
       </div>
-      <div class="junior-info">
+      <div class="member-info junior">
         <h2>Junior Mentorship</h2>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque deserunt exercitationem in minus aut, iusto accusamus voluptatem et cupiditate eveniet!</p>
         <div class="cta-button">
@@ -88,6 +94,36 @@ require_once './load.php';
         </div>
       </div>
     </section>
+
+    <section class="brief-con">
+      <div class="brief-info">
+        <h2>Who We Serve</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque deserunt exercitationem in minus aut, iusto accusamus voluptatem et cupiditate eveniet!</p>
+      </div>
+
+  <!-- Make Vue or PHP Render List -->
+      <div class="brief-img-con">
+        <a href="">
+          <img src="images/HAlliance.png" alt="">
+        </a>
+        <a href="">
+          <img src="images/Hockey_Canada.png" alt="">
+        </a>
+        <a href="">
+          <img src="images/logo_smallOHMA.png" alt="">
+        </a>
+        <a href="">
+          <img src="images/OHA.png" alt="">
+        </a>
+        <a href="">
+          <img src="images/ohf.png" alt="">
+        </a>
+        <a href="">
+          <img src="images/SportAbility.png" alt="">
+        </a>
+      </div>
+    </section>
+
 
     <!--! Footer -->
     <?php include_once './includes/footer.php' ?>
