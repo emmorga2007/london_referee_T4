@@ -1,3 +1,22 @@
 .footer {
-  background-color: rgb(232, 226, 245)
+  background-color: $black;
+  padding:5em 3em 3em 3em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  ul li{
+    padding:1em;
+  }
+  img{height:100px;}
+}
+
+.socials{
+  img{width:2em;margin-right:10px;}
+}
+
+.copyright{
+  background: $black;
+  text-align: right;
+  padding: 1em 3em;
 }
