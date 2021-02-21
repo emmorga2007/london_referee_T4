@@ -8,23 +8,9 @@ body {
     max-width:2000px;
 }
 
-h2{
-    font-family: $header-font;
-    font-size: $header-size;
-    color: $white;
-}
+h2{@include headerFont();}
 
-p{
-    color:$white;
-    font-family: $copy-font;
-    font-size:$copy-size;
-}
-
-a{
-    color:$white;
-    font-family: $copy-font;
-    font-size:$copy-size;
-}
+p, a{@include copyFont();}
 
 .cta-button{
   display: flex;

@@ -19,7 +19,7 @@ require_once './load.php';
 </head>
 <body>
   <main>
-    <header class="header">
+    <header class="main-header">
       <h2 class="hidden">Header</h2>
 
       <?php include_once './includes/nav.php' ?>
@@ -43,39 +43,23 @@ require_once './load.php';
         </div>
 
         <div class="landing-info">
-          <h2>become part of the team</h2>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis fugit amet repellendus tempore, nihil ut!</p>
-          <div class="cta-button">
-            <a href="">Learn More</a>
-          </div>
+
+          <h2>
+            <span class="dark-text">join</span> the<br>
+            <span class="big-text">stripes</span>
+          </h2>
+
+          <p>We provide Referee services for leagues all over Ontario! Young and Old, we provide training camps for aspiring Refs. Easily sign up to become part of the London Referee's Group</p>
+          <!-- <div class="cta-button"><a href="">Learn More</a></div> -->
         </div>
 
       </div>
     </header>
 
     <section class="brief-con">
-
-      <div class="brief-img-con">
-        <img src="" alt="">
-      </div>
-
       <div class="brief-info">
-        <h2>Who is LRG</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque deserunt exercitationem in minus aut, iusto accusamus voluptatem et cupiditate eveniet!</p>
-        <div class="cta-button">
-          <a href="">Learn More</a>
-        </div>
-      </div>
-
-    </section>
-
-    <section class="member-con">
-      <div class="angle-img">
-        <img src="" alt="">
-      </div>
-      <div class="member-info adult">
-        <h2>Membership</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque deserunt exercitationem in minus aut, iusto accusamus voluptatem et cupiditate eveniet!</p>
+        <h2>London Referee Group</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi nisi voluptatibus, ipsa obcaecati ipsum atque incidunt repellendus eum cum quas esse! Vitae, enim reprehenderit? Et, nulla molestias quos porro soluta provident facere corporis velit assumenda sapiente! Illum provident similique recusandae cumque voluptas culpa ipsa consectetur? Deleniti earum veniam a consectetur.</p>
         <div class="cta-button">
           <a href="">Learn More</a>
         </div>
@@ -83,26 +67,45 @@ require_once './load.php';
     </section>
 
     <section class="member-con">
-      <div class="angle-img">
-        <img src="" alt="">
-      </div>
       <div class="member-info junior">
-        <h2>Junior Mentorship</h2>
+        <h2>First Time Referee?</h2>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque deserunt exercitationem in minus aut, iusto accusamus voluptatem et cupiditate eveniet!</p>
         <div class="cta-button">
           <a href="">Learn More</a>
         </div>
       </div>
+      <div class="angle-img junior">
+        <img src="images/maleRef.png" alt="">
+      </div>
     </section>
 
-    <section class="brief-con">
-      <div class="brief-info">
-        <h2>Who We Serve</h2>
+    <section class="quote-con">
+      <div class="quote">
+        <p>"The goal of the Referee is to not be mentioned.<br>
+        If you can achieve this, it's been a great game"</p>
+      </div>
+    </section>
+
+    <section class="member-con">
+      <div class="member-info adult">
+        <h2>experienced Referee?</h2>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque deserunt exercitationem in minus aut, iusto accusamus voluptatem et cupiditate eveniet!</p>
+        <div class="cta-button">
+          <a href="">Learn More</a>
+        </div>
+      </div>
+      <div class="angle-img adult">
+        <img src="images/refskating.png" alt="">
+      </div>
+    </section>
+
+    <section class="partner-con">
+      <div class="partner-info">
+        <h2>Who We Serve</h2>
       </div>
 
   <!-- Make Vue or PHP Render List -->
-      <div class="brief-img-con">
+      <div class="partner-img-con">
         <a href="">
           <img src="images/HAlliance.png" alt="">
         </a>
@@ -114,6 +117,9 @@ require_once './load.php';
         </a>
         <a href="">
           <img src="images/OHA.png" alt="">
+        </a>
+        <a href="">
+          <img src="images/OWHA.png" alt="">
         </a>
         <a href="">
           <img src="images/ohf.png" alt="">
