@@ -15,8 +15,41 @@ require_once './load.php';
 </head>
 <body>
   <main>
-    <header>
+    <header class="main-header">
+      <h2 class="hidden">Header</h2>
+
       <?php include_once './includes/nav.php' ?>
+
+      <div class="logo-con">
+        <img src="images/logo.svg" alt="logo image">
+      </div>
+
+      <div class="landing">
+
+        <div class="scene">
+          <div class="character" data-depth="0.1" >
+            <img class="char3" src="" alt="player">
+          </div>
+          <div class="character" data-depth="0.2">
+            <img class="char2" src="" alt="player">
+          </div>
+          <div class="character" data-depth="0.3">
+            <img class="char1" src="" alt="player">
+          </div>
+        </div>
+
+        <div class="landing-info">
+
+          <h2>
+            <span class="dark-text">join</span> the<br>
+            <span class="big-text">stripes</span>
+          </h2>
+
+          <p>We provide Referee services for leagues all over Ontario! Young and Old, we provide training camps for aspiring Refs. Easily sign up to become part of the London Referee's Group</p>
+          <!-- <div class="cta-button"><a href="">Learn More</a></div> -->
+        </div>
+
+      </div>
     </header>
 
     <h1>Programs</h1>

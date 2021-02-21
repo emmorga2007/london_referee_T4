@@ -1,0 +1,19 @@
+
+@import "../modules/_vars.scss"; 
+
+
+@mixin headerFont($size: false, $color: false, $style: false) {
+    @if $style { font-style: italic; }@else{font-style: normal;}
+    @if $color { color: $color; }@else{color: $white;}
+    @if $size { font-size: $size; }@else{font-size: $header-size;}
+    font-family: $header-font;
+    text-transform: uppercase;
+}
+
+@mixin copyFont($size: false, $color: false, $style: false) {
+    @if $style { font-style: italic; }@else{font-style: normal;}
+    @if $color { color: $color; }@else{color: $white;}
+    @if $size { font-size: $size; }@else{font-size: $copy-size;}
+    font-family: $copy-font;
+    line-height: 1.5em;
+}
