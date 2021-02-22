@@ -17,7 +17,7 @@ require_once './load.php';
 
   <h1 class="hidden">Programs</h1>
   <main>
-    <header>
+    <header class="client-header">
       <h2 class="hidden">Header</h2>
 
       <?php include_once './includes/nav.php' ?>

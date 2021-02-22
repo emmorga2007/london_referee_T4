@@ -5,9 +5,9 @@
         London, On<br>
         N6G 5J9</p>
         <div class="socials">
-            <img src="images/facebook.svg" alt="">
-            <img src="images/instagram.svg" alt="">
-            <img src="images/twitter.svg" alt="">
+            <img src="<?php echo ROOT_PATH .'/images/facebook.svg'?>" alt="">
+            <img src="<?php echo ROOT_PATH .'/images/instagram.svg'?>" alt="">
+            <img src="<?php echo ROOT_PATH .'/images/twitter.svg'?>" alt="">
         </div>
     </div>
 
@@ -53,7 +53,7 @@
         </li>
         <li>
             <a href="index.php">
-                <img src="images/LRGlogo-v.svg" alt="">
+                <img src="<?php echo ROOT_PATH .'/images/LRGlogo.svg'?>" alt="">
             </a>
         </li>
     </ul>
