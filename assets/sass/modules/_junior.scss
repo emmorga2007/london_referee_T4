@@ -1,0 +1,30 @@
+.passion-con{
+    min-height:50vh;
+    padding: 5rem 3rem;
+
+    background-image: url(../images/ref_banner.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.passion-info{
+    width: 66%;
+    p{margin: 1.5rem 0}
+}
+
+.includes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    span{
+        @include copyFont(false, $highlight);
+        text-transform: uppercase;
+        margin-right: 1rem;
+    }
+}

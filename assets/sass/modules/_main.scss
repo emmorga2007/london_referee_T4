@@ -1,5 +1,5 @@
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 body {
@@ -16,8 +16,8 @@ p, a{@include copyFont();}
   display: flex;
   width:fit-content;
   border-radius: $rad;
-  background: $highlight;
-  a{padding: .5em 2em ;}
+  background: $black;
+  a{padding: .5rem 2rem ;}
 }
 
 .highlight {

@@ -24,10 +24,6 @@ require_once './load.php';
 
       <?php include_once './includes/nav.php' ?>
 
-      <div class="logo-con">
-        <img src="images/logo.svg" alt="logo image">
-      </div>
-
       <div class="landing">
 
         <div class="scene">
@@ -58,23 +54,49 @@ require_once './load.php';
 
     <section class="brief-con">
       <div class="brief-info">
+
         <h2>London Referee Group</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi nisi voluptatibus, ipsa obcaecati ipsum atque incidunt repellendus eum cum quas esse! Vitae, enim reprehenderit? Et, nulla molestias quos porro soluta provident facere corporis velit assumenda sapiente! Illum provident similique recusandae cumque voluptas culpa ipsa consectetur? Deleniti earum veniam a consectetur.</p>
-        <div class="cta-button">
-          <a href="">Learn More</a>
+
+        <div class="partner-img-con hidden">
+          <a href="">
+            <img src="images/HAlliance.png" alt="">
+          </a>
+          <a href="">
+          <img src="images/Hockey_Canada.png" alt="">
+          </a>
+          <a href="">
+            <img src="images/logo_smallOHMA.png" alt="">
+          </a>
+          <a href="">
+            <img src="images/OHA.png" alt="">
+          </a>
+          <a href="">
+            <img src="images/OWHA.png" alt="">
+          </a>
+          <a href="">
+            <img src="images/ohf.png" alt="">
+          </a>
+          <a href="">
+            <img src="images/SportAbility.png" alt="">
+          </a>
         </div>
+
+      <div class="cta-button">
+        <a href="">Learn More</a>
       </div>
+    </div>
     </section>
 
-    <section class="member-con">
-      <div class="member-info junior">
+    <section class="angle-con">
+      <div class="angle-info right">
         <h2>First Time Referee?</h2>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque deserunt exercitationem in minus aut, iusto accusamus voluptatem et cupiditate eveniet!</p>
         <div class="cta-button">
           <a href="">Learn More</a>
         </div>
       </div>
-      <div class="angle-img junior">
+      <div class="angle-img left">
         <img src="images/maleRef.png" alt="">
       </div>
     </section>
@@ -86,15 +108,15 @@ require_once './load.php';
       </div>
     </section>
 
-    <section class="member-con">
-      <div class="member-info adult">
+    <section class="angle-con">
+      <div class="angle-info left">
         <h2>experienced Referee?</h2>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque deserunt exercitationem in minus aut, iusto accusamus voluptatem et cupiditate eveniet!</p>
         <div class="cta-button">
           <a href="">Learn More</a>
         </div>
       </div>
-      <div class="angle-img adult">
+      <div class="angle-img right">
         <img src="images/refskating.png" alt="">
       </div>
     </section>

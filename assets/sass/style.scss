@@ -2,8 +2,11 @@
 @import './modules/_mixins.scss';
 @import './modules/_defaults.scss';
 @import './modules/_main.scss';
+@import './modules/_angleSections.scss';
 
 @import './modules/_header.scss';
-@import './modules/_home.scss';
 @import './modules/_footer.scss';
+
+@import './modules/_home.scss';
+@import './modules/_junior.scss';
 @import './modules/_admin.scss';
