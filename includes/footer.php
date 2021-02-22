@@ -37,7 +37,7 @@
 
     <ul>
         <li>
-            <a href="<?php echo ROOT_PATH .'/events.php'?>">Events</a>
+            <a href="<?php echo ROOT_PATH .'/admin/admin_login.php'?>">Admin Login</a>
         </li>
         <li>
             <a href="<?php echo ROOT_PATH .'/contact.php'?>">Contact</a>
@@ -49,12 +49,7 @@
 
     <ul>
         <li>
-            <a href="<?php echo ROOT_PATH .'/admin/admin_login.php'?>">Admin Login</a>
-        </li>
-        <li>
-            <a href="index.php">
-                <img src="<?php echo ROOT_PATH .'/images/LRGlogo.svg'?>" alt="">
-            </a>
+            <a href="index.php"><img src="<?php echo ROOT_PATH .'/images/LRGlogo-v.svg'?>" alt=""></a>
         </li>
     </ul>
 </footer>

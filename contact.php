@@ -13,8 +13,9 @@ require_once './load.php';
   <title>LRG | Contact</title>
   <link rel="stylesheet" href="./css/style.css">
 </head>
+<body>
   <main>
-    <header>
+    <header class="client-header">
       <?php include_once './includes/nav.php' ?>
     </header>
 
@@ -23,4 +24,5 @@ require_once './load.php';
     <!--! Footer -->
     <?php include_once './includes/footer.php' ?>
   </main>
+</body>
 </html>
