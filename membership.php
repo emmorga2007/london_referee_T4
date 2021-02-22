@@ -3,30 +3,36 @@ require_once './load.php';
 ?>
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LRG | About Us</title>
+  <title>LRG | Programs</title>
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+
+  <h1 class="hidden">Programs</h1>
   <main>
     <header>
+      <h2 class="hidden">Header</h2>
+
       <?php include_once './includes/nav.php' ?>
 
       <div class="landing">
 
-      <div class="landing-img about"></div>
+        <div class="landing-img adult"></div>
 
         <div class="landing-info">
           <h2>
-            <span class="dark-text">about</span><br>
-            <span class="big-text">referees</span>
+            <span class="dark-text">Membership</span><br>
+            <span class="big-text">Program</span>
           </h2>
-          <p>A referee is responsible for the general supervision of the game and can be identified by the red or orange armbands. Under most officiating systems, the referee is the only official with the authority to assess penalties for violations of the rules.</p>
+          <p>If you are interested in becoming a hockey official, this is for you! It will provide all the information needed to get your officiating career started</p>
+          <div class="cta-button"><a href="">Join The Team</a></div>
         </div>
 
       </div>
@@ -70,5 +76,8 @@ require_once './load.php';
     <!--! Footer -->
     <?php include_once './includes/footer.php' ?>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+  <script src="js/main.js" type="module"></script>
 </body>
 </html>

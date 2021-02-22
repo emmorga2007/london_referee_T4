@@ -19,7 +19,7 @@
             <a href="<?php echo ROOT_PATH .'/about.php'?>">About</a>
         </li>
         <li>
-            <a href="<?php echo ROOT_PATH .'/programs.php'?>">Programs</a>
+            <a href="<?php echo ROOT_PATH .'/junior.php'?>">Programs</a>
         </li>
     </ul>
 

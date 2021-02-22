@@ -31,7 +31,7 @@ require_once './load.php';
             <span class="dark-text">Junior</span> Mentorship<br>
             <span class="big-text">Program</span>
           </h2>
-          <p>We provide Referee services for leagues all over Ontario! Young and Old, we provide training camps for aspiring Refs. Easily sign up to become part of the London Referee's Group</p>
+          <p>If you are interested in becoming a hockey official, this is for you! It will provide all the information needed to get your officiating career started</p>
           <div class="cta-button"><a href="">Sign Up</a></div>
         </div>
 
