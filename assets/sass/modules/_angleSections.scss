@@ -1,7 +1,7 @@
 .angle-con{
     background: $white;
     position: relative;
-    min-height: 60vh;
+    min-height: 75vh;
     display: flex;
 
     .angle-img{
@@ -17,6 +17,8 @@
         &.left{left:0;}
 
         &.right{right:0;}
+
+        &.sleeve{justify-content: flex-start;}
     }
 
     .angle-info{

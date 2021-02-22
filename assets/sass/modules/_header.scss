@@ -1,9 +1,6 @@
 header {
   display: grid;
-  height: 100vh;
-  grid-template-rows: auto 1fr;
-
-  &.main-header{height:100vh;}
+  grid-template-rows: auto minmax(75vh, 1fr);
 
   nav{
     height: 3rem;
@@ -55,13 +52,15 @@ header {
     z-index: 0;
     overflow: hidden;
     &.junior {background: url(../images/junior_hero.jpg) center;}
+    &.adult {background: url(../images/ref_training.jpg) left center;}
+    &.about {background: url(../images/skates_hero.jpg) center;}
   }
 
   .landing-info{
     min-width: 360px;
     grid-area: 1/1/1/3;
     background: $highlight;
-    padding: 0 30% 0 3rem;
+    padding: 4rem 30% 5rem 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
