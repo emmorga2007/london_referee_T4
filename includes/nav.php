@@ -1,6 +1,6 @@
 <nav id="main-nav">
   <div class="logo-con">
-    <img src="images/LRGlogo.svg" alt="logo image">
+    <img src="<?php echo ROOT_PATH .'/images/LRGlogo.svg'?>" alt="logo image">
   </div>
   <ul>
     <li>

@@ -1,7 +1,7 @@
 # London referee
 
 ### Sass watch command from project root directory
-`sass --watch  assets/sass/style.scss:css/style.css --no-source-map`
+`sass --watch assets/sass/style.scss:css/style.css --no-source-map`
 
 ## Development Credentials
 Username: `admin`
@@ -9,9 +9,9 @@ Password: `824ZLnkOGO`
 
 ### Project Description
 
-Redesigning London Referee Group Website.  Creating a full website with admin access to control content, gallery, and add announcements.   
+Redesigning London Referee Group Website.  Creating a full website with admin access to control content, gallery, and add announcements.
 
-### Purpose 
+### Purpose
 
 This website is created for London Referee Group in association with Fanshawe College.  Created by students from *Interactive Media Design*.
 
@@ -29,7 +29,7 @@ This website is created for London Referee Group in association with Fanshawe Co
 - White `#F5F5FF`
 
 
-### Pages 
+### Pages
 
 - **Home**
 - **Whats New?**
@@ -43,7 +43,7 @@ This website is created for London Referee Group in association with Fanshawe Co
 - **Join the Team** (*Bolded on far right*)
     - General Questions
     - Junior Mentorship
-    - Beginner Inquiry 
+    - Beginner Inquiry
     - Experienced Referee
 
 - **Admin Dashboard**
@@ -51,7 +51,7 @@ This website is created for London Referee Group in association with Fanshawe Co
 #### Authors
 - *Natasha Adler* - Project Manager
 - *Katie Hodges* - Graphic Designer
-- *Emily Morgan* - Motion Designer/3D Specialist 
+- *Emily Morgan* - Motion Designer/3D Specialist
 
 - *Gavin Brown* - Front-End Developer
 - *Nate Grift* - Back-End Developer
