@@ -48,9 +48,13 @@
     </ul>
 
     <ul>
-        <img src="images/logo.svg" alt="">
         <li>
             <a href="<?php echo ROOT_PATH .'/admin/admin_login.php'?>">Admin Login</a>
+        </li>
+        <li>
+            <a href="index.php">
+                <img src="images/LRGlogo-v.svg" alt="">
+            </a>
         </li>
     </ul>
 </footer>

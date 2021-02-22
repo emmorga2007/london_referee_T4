@@ -14,47 +14,127 @@ require_once './load.php';
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+
+  <h1 class="hidden">Programs</h1>
   <main>
-    <header class="main-header">
+    <header>
       <h2 class="hidden">Header</h2>
 
       <?php include_once './includes/nav.php' ?>
 
-      <div class="logo-con">
-        <img src="images/logo.svg" alt="logo image">
-      </div>
-
       <div class="landing">
 
-        <div class="scene">
-          <div class="character" data-depth="0.1" >
-            <img class="char3" src="" alt="player">
-          </div>
-          <div class="character" data-depth="0.2">
-            <img class="char2" src="" alt="player">
-          </div>
-          <div class="character" data-depth="0.3">
-            <img class="char1" src="" alt="player">
-          </div>
-        </div>
+        <div class="landing-img junior"></div>
 
         <div class="landing-info">
-
           <h2>
-            <span class="dark-text">join</span> the<br>
-            <span class="big-text">stripes</span>
+            <span class="dark-text">Junior</span> Mentorship<br>
+            <span class="big-text">Program</span>
           </h2>
-
           <p>We provide Referee services for leagues all over Ontario! Young and Old, we provide training camps for aspiring Refs. Easily sign up to become part of the London Referee's Group</p>
-          <!-- <div class="cta-button"><a href="">Learn More</a></div> -->
+          <div class="cta-button"><a href="">Sign Up</a></div>
         </div>
 
       </div>
     </header>
 
-    <h1>Programs</h1>
+    <section class="passion-con">
+      <div class="passion-info">
+        <h2>Add Your Passion to the Stripes</h2>
+        <p>Officials perform a vital role in the game at all levels are the third team on the ice, without whom the game would not happen. The level system, Level I through Level VI, is the foundation for the training and development of officials across Canada, broken down into four basic streams, each with different priorities. They include:</p>
+        <div class="includes">
+          <span>Initiation</span>
+          <span>Recreational</span>
+          <span>Competitive</span>
+          <span>Program of Excelence</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="angle-con">
+      <div class="angle-info right">
+        <h2>safe play starts here</h2>
+        <h3>LEVEL I</h3>
+        <p>To prepare a young or new official to officiate minor hockey.</p>
+        <h3>LEVEL II</h3>
+        <p>To further enhance the training and skills of minor hockey officials.</p>
+        <h3>LEVEL III</h3>
+        <p>To prepare officials capable of refereeing minor hockey playoffs (league and regional) and women’s national championships, or being a linesperson in Junior B, Junior C, Junior D, Senior and U15 or U18 regional championships.</p>
+      </div>
+      <div class="angle-img left">
+        <img src="images/timbits_girl.png" alt="">
+      </div>
+    </section>
+
+    <section class="quote-con">
+      <div class="quote">
+      </div>
+    </section>
+
+    <section class="angle-con">
+      <div class="angle-info left">
+        <h2>gaining leadership</h2>
+        <h3>LEVEL IV</h3>
+        <p>To prepare officials capable of refereeing Senior, Junior A, Junior B, Junior C, Junior D, minor hockey regional and national championships, women’s national championships and designated IIHF competitions.</p>
+        <h3>LEVEL V</h3>
+        <p>To prepare officials to referee Major Junior, Junior A, Senior, U SPORTS and regional playoffs.</p>
+        <h3>LEVEL VI</h3>
+        <p>To prepare officials capable of refereeing at national championships and designated IIHF competitions (i.e. Memorial Cup, Centennial Cup, Allan Cup, David Johnston University Cup, IIHF world championships, Olympic Winter Games, FISU Games).</p>
+      </div>
+
+      <div class="angle-img right">
+        <img src="images/timbits_boy.png" alt="">
+      </div>
+    </section>
+
+
+    <section class="quote-con">
+      <p></p>
+    </section>
+
+
+    <section class="angle-con">
+      <div class="angle-info right">
+        <h2>Steps to Certification</h2>
+
+        <p>Certification at all levels, except Level I, is a two-part process involving clinical and practical assessment. The official must attend all clinic sessions and obtain the minimum mark on the examination.</p>
+        <p>The practical assessment portion is the most difficult to apply consistently across the entire program. It is strongly recommended that all supervisors be provided with a copy of the Hockey Canada Officiating Procedures Manual to ensure a consistent approach to this task.</p>
+        <p>Certification is not complete until both phases – clinical and practical – have been completed.</p>
+
+        <div class="cta-button">
+          <a href="">Learn More</a>
+        </div>
+      </div>
+      <div class="angle-img left">
+        <img src="images/femaleRef.png" alt="">
+      </div>
+    </section>
+
+    <section class="quote-con">
+      <p></p>
+    </section>
+
+    <section class="angle-con">
+      <div class="angle-info left">
+        <h2>General Certification Rules</h2>
+        <p>Certification at any level with the Hockey Canada Officiating Program does not make an official automatically eligible for entry to the next level (except Level I). Demonstration of ability or potential ability is necessary to move to the next level.</p>
+        <p>Being certified at any one level does not necessarily mean an official will be able to officiate all categories of hockey defined at that level. Conversely, an official does not have to officiate all categories of hockey at a certain level in order to gain certification at that level.</p>
+        <p>Where it has been determined (through supervision) that an official is no longer able to officiate at a certain level, they will be certified at a new, lower level in line with their present ability.</p>
+        <p>An individual must be at least 16 years old to be certified at Level II or higher.</p>
+        <div class="cta-button">
+          <a href="">Learn More</a>
+        </div>
+      </div>
+      <div class="angle-img right">
+        <img src="images/jrRef.png" alt="">
+      </div>
+    </section>
 
     <!--! Footer -->
     <?php include_once './includes/footer.php' ?>
-  </main></body>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+  <script src="js/main.js" type="module"></script>
+</body>
 </html>

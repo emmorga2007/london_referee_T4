@@ -1,22 +1,27 @@
 .footer {
   background-color: $black;
-  padding:5em 3em 3em 3em;
+  padding:5rem 3rem 2rem 3rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 
   ul li{
-    padding:1em;
+    padding:1rem;
   }
-  img{height:100px;}
+  a img{height:100px; float:right;}
+}
+.footer-left{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .socials{
-  img{width:2em;margin-right:10px;}
+  img{width:2rem;margin-right:10px;}
 }
 
 .copyright{
   background: $black;
   text-align: right;
-  padding: 1em 3em;
+  padding: 1rem 3rem;
 }

@@ -1,6 +1,6 @@
 .brief-con{
     min-height:50vh;
-    padding: 3em;
+    padding: 3rem;
 
     background-image: url(../images/ref_banner.jpg);
     background-attachment: fixed;
@@ -8,74 +8,23 @@
     background-position: center;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.brief-info{
-    width: 50%;
-    p{margin: 1.5em 0}
-}
-
-.quote-con{
-    background-image: url(../images/quote_banner.jpg);
-    background-size: cover;
-    background-position: left center;
-    background-attachment: fixed;
-    padding: 3em;
-    text-align: center;
-    .quote{
-        p{@include copyFont(1.75em, false, i)}
-    }
-}
-
-
-.member-con{
-    background: $white;
-    min-height:60vh;
-    display: grid;
-    grid-template-columns: 30% 1fr 1fr 30%;
-
-    .angle-img{
-        z-index: 2;
-        height: 60vh;
-        display: flex;
-        align-items: center;
-        img{height:100%}
-        &.junior{grid-area: 1/1/1/2;}
-        &.adult{grid-area: 1/4/1/5;}
-    }
-
-    .member-info{
-        background: $highlight;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        p{margin: 1em 0}
-        .cta-button{background:$black;}
-
-        &.junior{
-            grid-area: 1/2/1/5;
-            padding: 0 3em 0 30%;
-            clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
-        }
-
-        &.adult{
-            grid-area: 1/1/1/4;
-            padding: 0 30% 0 3em;
-            clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 0% 100%);
-        }
+    .brief-info{
+        width:66%;
+        p{margin: 1.5rem 0;}
+        .cta-button{background: $highlight;}
     }
 }
 
 .partner-con{
     background-image: url(../images/quote_banner.jpg);
-    background-size: cover;
-    background-position: left center;
+    background-size:cover;
+    background-position: center;
     background-attachment: fixed;
 
-    padding:3em;
+    padding:3rem;
     min-height: 50vh;
 
     display: flex;
@@ -83,16 +32,16 @@
     justify-content: center;
     align-items: center;
 
+}
     .partner-img-con{
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         flex-wrap: wrap;
         img{
             max-height:100px;
             max-width: 200px;
-            padding: 2em 1em;
+            padding: 1rem;
         }
     }
-}
 

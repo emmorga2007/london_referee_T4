@@ -8,6 +8,7 @@
     @if $size { font-size: $size; }@else{font-size: $header-size;}
     font-family: $header-font;
     text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
 @mixin copyFont($size: false, $color: false, $style: false) {
@@ -15,5 +16,6 @@
     @if $color { color: $color; }@else{color: $white;}
     @if $size { font-size: $size; }@else{font-size: $copy-size;}
     font-family: $copy-font;
-    line-height: 1.5em;
+    line-height: 1.5rem;
+    letter-spacing: 1px;
 }

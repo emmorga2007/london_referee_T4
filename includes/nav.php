@@ -1,4 +1,7 @@
 <nav id="main-nav">
+  <div class="logo-con">
+    <img src="images/LRGlogo.svg" alt="logo image">
+  </div>
   <ul>
     <li>
       <a href="<?php echo ROOT_PATH .'/index.php'?>">Home</a>
