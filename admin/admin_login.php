@@ -36,19 +36,24 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
   <!-- Header -->
-  <?php include_once '../includes/header.php' ?>
+  <header>
+    <?php include_once '../includes/nav.php' ?>
+  <main>
+    <section class='admin-page'>
+      <h1>Admin Login</h1>
+      <?php echo !empty($message)?'<div class="status">'.$message.'</div>':'' ?>
+      <form action="admin_login.php" method="POST">
+        <label for="username">Username:</label>
+        <input id="username" type="text" name="username" value="">
+        <br><br>
+        <label for="password" type='password'>Pasword: </label>
+        <input id="password" type="password" name="password">
+        <br><br>
+        <button type="submit" name="submit">Login</button>
+      </form>
+    </section>
+  </main>
 
-  <h1>Admin Login</h1>
-  <?php echo !empty($message)?'<div class="status">'.$message.'</div>':'' ?>
-  <form action="admin_login.php" method="POST">
-    <label for="username">Username:</label>
-    <input id="username" type="text" name="username" value="">
-    <br><br>
-    <label for="password" type='password'>Pasword: </label>
-    <input id="password" type="password" name="password">
-    <br><br>
-    <button type="submit" name="submit">Login</button>
-  </form>
 
   <!-- Footer -->
   <?php include_once '../includes/footer.php' ?>
