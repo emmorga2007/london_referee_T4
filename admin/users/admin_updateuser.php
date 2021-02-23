@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require_once '../../load.php';
 confirm_logged_in(true);
@@ -19,20 +19,20 @@ if (isset($_POST['submit'])) {
 
 
 if (isset($_GET['id']) && isset($_GET['type'])) {
-  $type = $_GET['type'];
-  $id = $_GET['id'];
-  if ($type == 'delete') {
-    $message = deleteUser($id);
-  } else if ($type == 'passwordreset') {
-    $message = passwordReset($id);
-  } else if ($type == 'update') {
-    $user = getUsersById($id);
-  } else {
-    $message = 'Not a valid type';
-  }
-} else if (!isset($_POST['submit'])) {
-  $message = 'Not a valid item';
-  // redirect_to('admin_users.php');
+    $type = $_GET['type'];
+    $id = $_GET['id'];
+    if ($type == 'delete') {
+        $message = deleteUser($id);
+    } elseif ($type == 'passwordreset') {
+        $message = passwordReset($id);
+    } elseif ($type == 'update') {
+        $user = getUsersById($id);
+    } else {
+        $message = 'Not a valid type';
+    }
+} elseif (!isset($_POST['submit'])) {
+    $message = 'Not a valid item';
+    // redirect_to('admin_users.php');
 }
 
 ?>
@@ -47,12 +47,15 @@ if (isset($_GET['id']) && isset($_GET['type'])) {
   <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body> <!-- Header -->
-  <?php include_once '../../includes/header.php' ?>
-  <?php include_once '../templates/admin_header.php' ?>
+<header>
+    <?php include_once '../../includes/nav.php' ?>
+    <?php include_once '../templates/admin_header.php' ?>
+  </header>
+  <div class="admin-page">
   <h1>Update User</h1>
       <?php echo !empty($message)?'<div class="status">'.$message.'</div>':'' ?>
 
-      <?php if(!empty($user)): ?>
+      <?php if (!empty($user)): ?>
         <form action="admin_updateuser.php" method="post">
         <input type="hidden" name="id" value="<?php echo $user['user_id']; ?>">
         <label for="fname">First Name</label>
@@ -74,6 +77,7 @@ if (isset($_GET['id']) && isset($_GET['type'])) {
         <button type="submit" name="submit">Update User</button>
       </form>
       <?php endif ?>
+        </div>
       
   <!-- Footer -->
   <?php include_once '../../includes/footer.php' ?>
