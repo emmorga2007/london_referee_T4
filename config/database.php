@@ -8,7 +8,7 @@ class Database
 
     private $username = "root";
 
-    private $password = "root";
+    private $password = "";
 
     public $conn;
 

@@ -13,11 +13,12 @@ h2{@include headerFont();}
 p, a{@include copyFont();}
 
 .cta-button{
-  display: flex;
-  width:fit-content;
-  border-radius: $rad;
-  background: $black;
-  a{padding: .5rem 2rem ;}
+    display: flex;
+    flex-grow: 0;
+    border-radius: $rad;
+    background: $black;
+    width: max-content;
+    a{padding: .5rem 2rem;}
 }
 
 .highlight {

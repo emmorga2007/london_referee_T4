@@ -23,14 +23,9 @@ header nav{
     }
   }
 
-.client-header {
-  display: grid;
-  grid-template-rows: auto minmax(75vh, 1fr);
-}
 .main-header {
   display: grid;
-  height: 100vh;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto minmax(75vh, 1fr);
 }
 
 
@@ -80,8 +75,7 @@ header nav{
 
 .scene {
   grid-area: 1/2/1/4;
-  background: url(../images/rink.jpg) top;
-  background-size: cover;
+  background: url(../images/rink.jpg) center right / cover;
   z-index: 0;
   overflow: hidden;
 

@@ -1,0 +1,28 @@
+.partner-con{
+    background-image: url(../images/quote_banner.jpg);
+    background-size:cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    padding:3rem;
+    min-height: 50vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.partner-img-con{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    img{
+        max-height:100px;
+        max-width: 200px;
+        padding: 1rem;
+    }
+}
+
