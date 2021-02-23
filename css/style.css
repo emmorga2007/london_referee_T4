@@ -92,9 +92,10 @@ p, a {
 
 .cta-button {
   display: flex;
-  width: fit-content;
+  flex-grow: 0;
   border-radius: 0.5rem;
   background: #141416;
+  width: max-content;
 }
 .cta-button a {
   padding: 0.5rem 2rem;
@@ -102,6 +103,171 @@ p, a {
 
 .highlight {
   color: #c72323;
+}
+
+header nav {
+  height: 3rem;
+  padding: 1.5rem 3rem;
+  background-color: #232326;
+  color: #F5F5FF;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #F5F5FF;
+  font-family: "cabin", Helvetica, Arial, sans-serif;
+}
+header nav .cta-button {
+  background: #c72323;
+}
+header nav ul {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+header nav ul li a {
+  padding: 0.5rem 1rem;
+}
+header nav ul li a:hover {
+  opacity: 0.5;
+}
+header nav ul li:last-of-type {
+  margin-left: 15px;
+}
+
+.main-header {
+  display: grid;
+  grid-template-rows: auto minmax(75vh, 1fr);
+}
+
+.logo-con {
+  display: flex;
+  width: 10vw;
+  min-width: 80px;
+  max-width: 250px;
+  transition: all 500ms ease-in-out;
+}
+.logo-con.shrink {
+  width: 10vw;
+}
+.logo-con img {
+  width: 100%;
+}
+
+.landing {
+  display: grid;
+  grid-template-columns: 33vw 1fr 50vw;
+}
+.landing .landing-img {
+  grid-area: 1/2/1/4;
+  z-index: 0;
+  overflow: hidden;
+}
+.landing .landing-img.junior {
+  background: url(../images/junior_hero.jpg) center/cover;
+}
+.landing .landing-img.adult {
+  background: url(../images/ref_training.jpg) center right/cover;
+}
+.landing .landing-img.about {
+  background: url(../images/skates_hero.jpg) center/cover;
+}
+.landing .landing-info {
+  min-width: 360px;
+  grid-area: 1/1/1/3;
+  background: #c72323;
+  padding: 4rem 30% 5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  clip-path: polygon(0 0, 80% 0%, 100% 100%, 0% 100%);
+}
+.landing .landing-info h2 {
+  font-style: italic;
+  color: #F5F5FF;
+  font-size: 3.5rem;
+  font-family: "cabin", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+.landing .landing-info .dark-text {
+  color: #232326;
+}
+.landing .landing-info .big-text {
+  font-size: 5rem;
+}
+.landing .landing-info p {
+  margin: 1rem 0;
+}
+
+.scene {
+  grid-area: 1/2/1/4;
+  background: url(../images/rink.jpg) center right/cover;
+  z-index: 0;
+  overflow: hidden;
+}
+.scene .character {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.scene .character img {
+  background-color: #c72323;
+  position: absolute;
+}
+.scene .character .char1 {
+  width: 200px;
+  height: 300px;
+  bottom: 5%;
+  right: 38%;
+}
+.scene .character .char2 {
+  width: 150px;
+  height: 250px;
+  bottom: 10%;
+  right: 15%;
+}
+.scene .character .char3 {
+  width: 125px;
+  height: 200px;
+  bottom: 20%;
+  right: 60%;
+}
+
+.brief-con {
+  min-height: 50vh;
+  padding: 5rem 3rem;
+  background: url(../images/ref_banner.jpg) no-repeat center/cover fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brief-con .brief-info {
+  width: 66%;
+}
+.brief-con .brief-info p {
+  margin: 1.5rem 0;
+}
+.brief-con .brief-info .cta-button {
+  background: #c72323;
+}
+
+.includes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.includes span {
+  font-style: normal;
+  color: #c72323;
+  font-size: 1.2rem;
+  font-family: "cabin", Helvetica, Arial, sans-serif;
+  line-height: 1.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-right: 1rem;
 }
 
 .angle-con {
@@ -232,142 +398,174 @@ p, a {
     p{@include copyFont(1.75em, false, i)}
 }
 */
-header nav {
-  height: 3rem;
-  padding: 1.5rem 3rem;
-  background-color: #232326;
-  color: #F5F5FF;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  color: #F5F5FF;
-  font-family: "cabin", Helvetica, Arial, sans-serif;
-}
-header nav .cta-button {
-  background: #c72323;
-}
-header nav ul {
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-header nav ul li a {
-  padding: 0.5rem 1rem;
-}
-header nav ul li a:hover {
-  opacity: 0.5;
-}
-header nav ul li:last-of-type {
-  margin-left: 15px;
-}
-
-.client-header {
-  display: grid;
-  grid-template-rows: auto minmax(75vh, 1fr);
-}
-
-.main-header {
-  display: grid;
-  height: 100vh;
-  grid-template-rows: auto 1fr;
-}
-
-.logo-con {
-  display: flex;
-  width: 10vw;
-  min-width: 80px;
-  max-width: 250px;
-  transition: all 500ms ease-in-out;
-}
-.logo-con.shrink {
-  width: 10vw;
-}
-.logo-con img {
-  width: 100%;
-}
-
-.landing {
-  display: grid;
-  grid-template-columns: 33vw 1fr 50vw;
-}
-.landing .landing-img {
-  grid-area: 1/2/1/4;
-  z-index: 0;
-  overflow: hidden;
-}
-.landing .landing-img.junior {
-  background: url(../images/junior_hero.jpg) center/cover;
-}
-.landing .landing-img.adult {
-  background: url(../images/ref_training.jpg) center right/cover;
-}
-.landing .landing-img.about {
-  background: url(../images/skates_hero.jpg) center/cover;
-}
-.landing .landing-info {
-  min-width: 360px;
-  grid-area: 1/1/1/3;
-  background: #c72323;
-  padding: 4rem 30% 5rem 3rem;
+.partner-con {
+  background-image: url(../images/quote_banner.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 3rem;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  clip-path: polygon(0 0, 80% 0%, 100% 100%, 0% 100%);
+  align-items: center;
 }
-.landing .landing-info h2 {
-  font-style: italic;
+
+.partner-img-con {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.partner-img-con img {
+  max-height: 100px;
+  max-width: 200px;
+  padding: 1rem;
+}
+
+.announcements-con {
+  min-height: 75vh;
+  background-color: #c72323;
+  padding: 3rem;
+}
+.announcements-con h2 {
+  padding: 3rem 0;
+}
+
+.main-announcements {
+  position: relative;
+  padding: 3rem 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  border-bottom: solid 2px #141416;
+}
+.main-announcements h3 {
+  font-style: normal;
   color: #F5F5FF;
-  font-size: 3.5rem;
+  font-size: 2rem;
   font-family: "cabin", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  font-weight: 700;
 }
-.landing .landing-info .dark-text {
-  color: #232326;
+.main-announcements p {
+  padding-top: 1rem;
 }
-.landing .landing-info .big-text {
-  font-size: 5rem;
-}
-.landing .landing-info p {
-  margin: 1rem 0;
+.main-announcements span {
+  font-style: normal;
+  color: #F5F5FF;
+  font-size: 1.2rem;
+  font-family: "cabin", Helvetica, Arial, sans-serif;
+  line-height: 1.5rem;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
 }
 
-.scene {
-  grid-area: 1/2/1/4;
-  background: url(../images/rink.jpg) top;
-  background-size: cover;
-  z-index: 0;
+.gallery-con {
+  padding: 6rem 0;
+  background: url(../images/ref_banner.jpg) no-repeat bottom center/cover fixed;
+}
+.gallery-con h2 {
+  padding: 3rem;
+  padding-bottom: 1rem;
+}
+
+.main-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+}
+.main-gallery .gallery-img {
+  display: grid;
   overflow: hidden;
 }
-.scene .character {
-  position: relative;
+.main-gallery .gallery-img::before {
+  grid-area: 1/1/2/2;
+  content: "";
+  padding-bottom: 100%;
+  display: block;
+}
+.main-gallery .gallery-img img {
+  grid-area: 1/1/2/2;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: bottom;
 }
-.scene .character img {
-  background-color: #c72323;
+
+.overlay {
+  background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
+  /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#1a000000", endColorstr="#80000000",GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+  grid-area: 1/1/2/2;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+  transform: scale(1.8);
+  transition: all 300ms ease-in-out;
+}
+.overlay:hover {
+  transform: scale(1);
+}
+.overlay p {
+  padding: 0.5rem 1rem;
+}
+
+.lightbox {
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.lightbox.show-lb {
+  display: flex;
+}
+.lightbox .lb-content {
+  position: relative;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.lightbox .lb-content img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.lightbox .lb-content p {
+  font-size: 20vh;
+  padding: 3rem;
+  cursor: pointer;
+}
+.lightbox .lb-content p:hover {
+  color: #c72323;
+}
+.lightbox .lb-content span {
+  font-style: normal;
+  color: #F5F5FF;
+  font-size: 4rem;
+  font-family: "cabin", Helvetica, Arial, sans-serif;
+  line-height: 1.5rem;
+  letter-spacing: 1px;
+  color: #F5F5FF;
   position: absolute;
+  right: 3rem;
+  top: 0;
+  transform: rotate(45deg);
+  cursor: pointer;
 }
-.scene .character .char1 {
-  width: 200px;
-  height: 300px;
-  bottom: 5%;
-  right: 38%;
-}
-.scene .character .char2 {
-  width: 150px;
-  height: 250px;
-  bottom: 10%;
-  right: 15%;
-}
-.scene .character .char3 {
-  width: 125px;
-  height: 200px;
-  bottom: 20%;
-  right: 60%;
+.lightbox .lb-content span:hover {
+  color: #c72323;
 }
 
 .footer {
@@ -404,89 +602,6 @@ header nav ul li:last-of-type {
   background: #141416;
   text-align: right;
   padding: 1rem 3rem;
-}
-
-.brief-con {
-  min-height: 50vh;
-  padding: 3rem;
-  background-image: url(../images/ref_banner.jpg);
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.brief-con .brief-info {
-  width: 66%;
-}
-.brief-con .brief-info p {
-  margin: 1.5rem 0;
-}
-.brief-con .brief-info .cta-button {
-  background: #c72323;
-}
-
-.partner-con {
-  background-image: url(../images/quote_banner.jpg);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  padding: 3rem;
-  min-height: 50vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.partner-img-con {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.partner-img-con img {
-  max-height: 100px;
-  max-width: 200px;
-  padding: 1rem;
-}
-
-.passion-con {
-  min-height: 50vh;
-  padding: 5rem 3rem;
-  background-image: url(../images/ref_banner.jpg);
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.passion-info {
-  width: 66%;
-}
-.passion-info p {
-  margin: 1.5rem 0;
-}
-
-.includes {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.includes span {
-  font-style: normal;
-  color: #c72323;
-  font-size: 1.2rem;
-  font-family: "cabin", Helvetica, Arial, sans-serif;
-  line-height: 1.5rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-right: 1rem;
 }
 
 .admin-page {

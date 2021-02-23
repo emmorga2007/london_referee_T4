@@ -9,12 +9,17 @@ require_once './load.php';
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LRG | About Us</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
+
+  <title>LRG | About</title>
+
 </head>
 <body>
   <main>
-    <header class="client-header">
+    <header class="main-header">
       <?php include_once './includes/nav.php' ?>
 
       <div class="landing">
@@ -74,5 +79,7 @@ require_once './load.php';
     <!--! Footer -->
     <?php include_once './includes/footer.php' ?>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="js/main.js" type="module"></script>
 </body>
 </html>
