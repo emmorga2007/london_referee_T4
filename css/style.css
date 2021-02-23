@@ -491,6 +491,11 @@ header nav ul li:last-of-type {
   font-size: 1.2rem;
   font-family: "cabin", Helvetica, Arial, sans-serif;
 }
+.admin-page textarea {
+  resize: vertical;
+  width: 90%;
+  height: 200px;
+}
 .admin-page a {
   text-decoration: underline;
 }
@@ -517,6 +522,10 @@ header nav ul li:last-of-type {
 }
 .admin-page td a:last-of-type {
   margin-right: 0;
+}
+.admin-page .td_mw {
+  max-width: 200px;
+  font-size: 1rem;
 }
 .admin-page tr:nth-of-type(2n + 1) {
   background-color: rgba(242, 242, 242, 0.14);

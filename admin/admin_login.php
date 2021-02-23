@@ -38,7 +38,6 @@ if (isset($_POST['submit'])) {
   <!-- Header -->
   <header>
     <?php include_once '../includes/nav.php' ?>
-  </header>
   <main>
     <section class='admin-page'>
       <h1>Admin Login</h1>

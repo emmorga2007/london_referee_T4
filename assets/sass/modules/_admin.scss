@@ -9,6 +9,12 @@
   font-size: $copy-size;
   font-family: $copy-font;
 
+  textarea {
+    resize:vertical;
+    width: 90%;
+    height: 200px;
+  }
+
   a {
     text-decoration: underline;
   }
@@ -42,6 +48,11 @@
         margin-right: 0;
       }
     }
+  }
+
+  .td_mw {
+    max-width: 200px;
+    font-size: 1rem;
   }
 
   tr:nth-of-type(2n + 1) {
