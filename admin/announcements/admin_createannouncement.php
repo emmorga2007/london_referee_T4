@@ -7,13 +7,11 @@ if (isset($_POST['submit'])) {
 
     // Data of new user
     $data = array(
-    'fname'=>trim($_POST['fname']),
-    'username'=>trim($_POST['username']),
-    'email'=>trim($_POST['email']),
-    'level'=>trim($_POST['level'])
+    'title'=>trim($_POST['title']),
+    'body'=>trim($_POST['body'])
   );
     // Return any errors and put in $message
-    $message =  createUser($data);
+    $message =  createAnnoucements($data);
 } 
 
 ?>
@@ -39,15 +37,15 @@ if (isset($_POST['submit'])) {
       <h1>Create Annoucement</h1>
       <?php echo !empty($message)?'<div class="status">'.$message.'</div>':'' ?>
       
-      <form action="admin_createuser.php" method="post">
+      <form action="admin_createannouncement.php" method="post">
         <label for="title">Title</label>
         <input type="text" id="title" name="title" value="" required>
         <br><br>
-        <label for="copy">Copy</label>
+        <label for="body">Copy</label>
         <br><br>
-        <textarea id="copy" name="copy" value="" required></textarea>
+        <textarea id="body" name="body" value="" required></textarea>
         <br><br>
-        <button type="submit" name="submit">Add User</button>
+        <button type="submit" name="submit">Add Annoucement</button>
       </form>
     </div>
   </main>

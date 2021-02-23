@@ -30,7 +30,7 @@ $message = getAnnoucements($annoucements);
     <div class="admin-page">
       <div class="sub-nav">
         <h1>Admin Announcements</h1>
-        <a href="admin_createannoucement.php" class="link">Create Announcement</a>
+        <a href="admin_createannouncement.php" class="link">Create Announcement</a>
       </div>
       <?php echo !empty($message)?'<div class="status">'.$message.'</div>':'' ?>
       <table>
@@ -46,8 +46,8 @@ $message = getAnnoucements($annoucements);
             <td class="td_mw"><?php echo $post['text']; ?></td>
             <td><?php echo $post['date']; ?></td>
             <td>
-              <a href="admin_updateannoucement.php?id=<?php echo $post['id']; ?>&type=delete">Delete</a>
-              <a href="admin_updateannoucement.php?id=<?php echo $post['id']; ?>&type=update">Update</a>
+              <a href="admin_updateannouncement.php?id=<?php echo $post['id']; ?>&type=delete">Delete</a>
+              <a href="admin_updateannouncement.php?id=<?php echo $post['id']; ?>&type=update">Update</a>
             </td>
           </tr>
         <?php endforeach?>
