@@ -10,14 +10,19 @@ require_once './load.php';
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LRG | Programs</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
+
+  <title>LRG | Membership</title>
+
 </head>
 <body>
 
   <h1 class="hidden">Programs</h1>
   <main>
-    <header class="client-header">
+    <header class="main-header">
       <h2 class="hidden">Header</h2>
 
       <?php include_once './includes/nav.php' ?>
@@ -38,8 +43,8 @@ require_once './load.php';
       </div>
     </header>
 
-    <section class="passion-con">
-      <div class="passion-info">
+    <section class="brief-con">
+      <div class="brief-info">
         <h2>keeping our passion for the game</h2>
         <p>Officials perform a vital role in the game at all levels are the third team on the ice, without whom the game would not happen.<br>
         Referees do not want to stand out on the ice, they want to blend in, they are the third team on the ice. They are there to ensure the game is fair and safe. Above all people come to see the two teams play a game and not watch the referees.</p>

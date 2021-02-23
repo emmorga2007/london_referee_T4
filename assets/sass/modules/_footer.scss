@@ -5,10 +5,12 @@
   flex-direction: row;
   justify-content: space-between;
 
+  >*{flex-grow: 1; flex-shrink: 0;}
+
   ul li{
     padding:1rem;
+    a img{height: 200px; float: right}
   }
-  a img{height:100px; float:right;}
 }
 .footer-left{
   display: flex;

@@ -1,7 +1,7 @@
 .angle-con{
     background: $white;
     position: relative;
-    min-height: 75vh;
+    min-height: 66vh;
     display: flex;
 
     .angle-img{
@@ -38,7 +38,7 @@
 
         &.left{
             padding-right: 45%;
-            clip-path: polygon(0 0, 70% 0, 85% 100%, 0 100%);
+            clip-path: polygon(0 0, 85% 0, 70% 100%, 0 100%);
         }
     }
 }

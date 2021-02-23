@@ -23,10 +23,11 @@ header nav{
     }
   }
 
-.client-header {
+.main-header {
   display: grid;
   grid-template-rows: auto minmax(75vh, 1fr);
 }
+
 
 .logo-con{
   display: flex;
@@ -48,12 +49,11 @@ header nav{
 
   .landing-img{
     grid-area: 1/2/1/4;
-    background-size: cover;
     z-index: 0;
     overflow: hidden;
-    &.junior {background: url(../images/junior_hero.jpg) center;}
-    &.adult {background: url(../images/ref_training.jpg) left center;}
-    &.about {background: url(../images/skates_hero.jpg) center;}
+    &.junior {background: url(../images/junior_hero.jpg) center / cover ;}
+    &.adult {background: url(../images/ref_training.jpg) center right / cover ;}
+    &.about {background: url(../images/skates_hero.jpg) center / cover;}
   }
 
   .landing-info{
@@ -75,8 +75,7 @@ header nav{
 
 .scene {
   grid-area: 1/2/1/4;
-  background: url(../images/rink.jpg) top;
-  background-size: cover;
+  background: url(../images/rink.jpg) center right / cover;
   z-index: 0;
   overflow: hidden;
 
