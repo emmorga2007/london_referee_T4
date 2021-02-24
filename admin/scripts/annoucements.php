@@ -19,13 +19,13 @@ function createAnnoucements($data) {
   $body = $data['body'];
 
 
-  $add_annoucement_query = 'INSERT INTO tbl_announcements (title, text)';
-  $add_annoucement_query .= ' VALUES (:title, :text)';
+  $add_annoucement_query = 'INSERT INTO tbl_announcements (title, body)';
+  $add_annoucement_query .= ' VALUES (:title, :body)';
   $annoucement_operation = $pdo->prepare($add_annoucement_query);
   $annoucement_operation->execute(
       array(
     ':title'=>$title,
-    ':text'=>$body
+    ':body'=>$body
   )
   );
 
@@ -83,7 +83,7 @@ function updateAnnouncement($data) {
 
   $pdo = Database::getInstance()->getConnection();
 
-  $announcement_query = 'UPDATE tbl_announcements SET title = :title, text = :body WHERE id = :id';
+  $announcement_query = 'UPDATE tbl_announcements SET title = :title, body = :body WHERE id = :id';
   $announcement_operation = $pdo->prepare($announcement_query);
   $announcement_operation->execute(
       array(

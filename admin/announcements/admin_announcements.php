@@ -43,7 +43,7 @@ $message = getAnnoucements($annoucements);
       <?php foreach ($annoucements as $post):?>
           <tr>
             <td><?php echo $post['title']; ?></td>
-            <td class="td_mw"><?php echo $post['text']; ?></td>
+            <td class="td_mw"><?php echo $post['body']; ?></td>
             <td><?php echo $post['date']; ?></td>
             <td>
               <a href="admin_updateannouncement.php?id=<?php echo $post['id']; ?>&type=delete">Delete</a>

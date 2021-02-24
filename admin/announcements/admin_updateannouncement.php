@@ -53,7 +53,7 @@ if (isset($_GET['type']) && isset($_GET['id'])) {
         <br><br>
         <label for="body">Copy</label>
         <br><br>
-        <textarea id="body" name="body" required><?php echo $announcement['text']; ?></textarea>
+        <textarea id="body" name="body" required><?php echo $announcement['body']; ?></textarea>
         <br><br>
         <button type="submit" name="submit">Update Annoucement</button>
       </form>

@@ -1,13 +1,13 @@
 <?php
 
-require_once '../load.php';
+require_once '../../load.php';
 
     $images = array();
 
     function getImages(){
         $pdo = Database::getInstance()->getConnection();
 
-        $queryAll = "SELECT * FROM tbl_gallery";
+        $queryAll = "SELECT * FROM tbl_content";
         $runAll = $pdo->query($queryAll);
 
         $images = $runAll->fetchAll(PDO::FETCH_ASSOC); //* PAN

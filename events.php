@@ -60,7 +60,8 @@ require_once './load.php';
       <div v-for="item in announcements" class="main-announcements">
         <h3>{{item.title}}</h3>
         <p>{{item.body}}</p>
-        <span>item.date</span>
+        <!-- Simple slice method to remove the time.  And leave only the date -->
+        <span>{{ item.date.slice(0, 10) }}</span>
       </div>
 
     </section>
@@ -69,7 +70,8 @@ require_once './load.php';
       <h2>Gallery</h2>
       <div class="main-gallery">
         <div v-for="image in images" @click="expandImg(image)" class="gallery-img">
-          <img :src="'images/' + image.source" alt="">
+        <!-- Images located in content folder when uploaded from admin dashboard -->
+          <img :src="'./content/' + image.path" :alt="image.name">
           <div class="overlay">
             <p>{{image.caption}}</p>
           </div>
@@ -80,7 +82,8 @@ require_once './load.php';
     <section :currentImg="currentImg" class="lightbox" :class="{'show-lb' : showLightbox}">
       <div class="lb-content">
         <p><</p>
-        <img :src="'images/' + currentImg.source" alt="">
+         <!-- Images located in content folder when uploaded from admin dashboard -->
+        <img :src="'./content/' + currentImg.path" alt="">
         <p>></p>
         <span @click="expandImg">+</span>
       </div>

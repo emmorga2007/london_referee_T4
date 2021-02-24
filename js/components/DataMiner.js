@@ -19,9 +19,4 @@ async function fetchData(sourceURL) {
     return dataset;
 }
 
-async function postData(sourceURL) {
-    return "You are using the postData API endpoint";
-}
-
-
 export { fetchData };
