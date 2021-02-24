@@ -15,8 +15,11 @@ confirm_logged_in();
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body> <!-- Header -->
-  <?php include_once '../includes/header.php' ?>
-  <?php include_once './templates/admin_header.php' ?>
+  <header>
+    <?php include_once '../includes/nav.php' ?>
+    <?php include_once './templates/admin_header.php' ?>
+  </header>
+  
   <main>
     
     <div class="admin-page">

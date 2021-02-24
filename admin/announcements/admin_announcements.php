@@ -1,7 +1,14 @@
 <?php
 require_once '../../load.php';
 confirm_logged_in();
+
+$annoucements;
+
+$message = getAnnoucements($annoucements);
+
+
 ?>
+
 
 
 
@@ -15,14 +22,38 @@ confirm_logged_in();
   <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body> <!-- Header -->
-  <?php include_once '../../includes/header.php' ?>
-  <?php include_once '../templates/admin_header.php' ?>
+  <header>
+    <?php include_once '../../includes/nav.php' ?>
+    <?php include_once '../templates/admin_header.php' ?>
+  </header>
   <main>
-    
     <div class="admin-page">
-      <h1>Admin Announcements</h1>
-      <p>Announcements</p>
+      <div class="sub-nav">
+        <h1>Admin Announcements</h1>
+        <a href="admin_createannouncement.php" class="link">Create Announcement</a>
+      </div>
+      <?php echo !empty($message)?'<div class="status">'.$message.'</div>':'' ?>
+      <table>
+        <tr>
+          <th>Title</th>
+          <th>Body</th>
+          <th>Date</th>
+          <th>Actions</th>
+        </tr>
+      <?php foreach ($annoucements as $post):?>
+          <tr>
+            <td><?php echo $post['title']; ?></td>
+            <td class="td_mw"><?php echo $post['text']; ?></td>
+            <td><?php echo $post['date']; ?></td>
+            <td>
+              <a href="admin_updateannouncement.php?id=<?php echo $post['id']; ?>&type=delete">Delete</a>
+              <a href="admin_updateannouncement.php?id=<?php echo $post['id']; ?>&type=update">Update</a>
+            </td>
+          </tr>
+        <?php endforeach?>
+      </table>
     </div>
+    
   </main>
   <!-- Footer -->
   <?php include_once '../../includes/footer.php' ?>
