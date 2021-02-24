@@ -75,16 +75,16 @@ require_once './load.php';
           </div>
         </div>
       </div>
-      <div :currentImg="currentImg" class="lightbox" :class="{'show-lb' : showLightbox}">
-        <div class="lb-content">
-          <p><</p>
-          <img :src="'images/' + currentImg.source" alt="">
-          <p>></p>
-          <span @click="expandImg">+</span>
-        </div>
-      </div>
     </section>
 
+    <section :currentImg="currentImg" class="lightbox" :class="{'show-lb' : showLightbox}">
+      <div class="lb-content">
+        <p><</p>
+        <img :src="'images/' + currentImg.source" alt="">
+        <p>></p>
+        <span @click="expandImg">+</span>
+      </div>
+    </section>
 
     <!--! Footer -->
     <?php include_once './includes/footer.php' ?>
