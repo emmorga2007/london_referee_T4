@@ -41,7 +41,7 @@ if (isset($_POST['submit'])) {
         <label for="title">Title</label>
         <input type="text" id="title" name="title" value="" required>
         <br><br>
-        <label for="body">Copy</label>
+        <label for="body">Body</label>
         <br><br>
         <textarea id="body" name="body" value="" required></textarea>
         <br><br>

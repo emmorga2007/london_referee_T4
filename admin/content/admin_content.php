@@ -7,7 +7,7 @@ $content = [];
 
 // if it was a post request then upload file
 if (isset($_POST["submit"])) {
-    $message = uploadFile();
+    $message = uploadFile($_POST["caption"]);
 }
 
 // Replaces messages if an error occured. This is done in this way to prevent it overwriting the message of a post request
@@ -42,6 +42,10 @@ if ($contentStatus) {
       <form action="admin_content.php" method="post" enctype="multipart/form-data">
         <label for="fileToUpload">Select image to upload:</label>
         <input type="file" name="fileToUpload" id="fileToUpload" required>
+        <br><br>
+        <label for="caption">Caption:</label>
+        <input type="text" name="caption" id="caption" required placeholder="Caption..">
+        <br><br>
         <input type="submit" value="Upload File" name="submit">
       </form>
 </section>
@@ -52,7 +56,8 @@ if ($contentStatus) {
           <div>
             <div class="controls">
               <a href="admin_deletecontent.php?id=<?php echo $item['id']; ?>">Delete</a>
-              <h4><?php echo $item['name']; ?></h4>
+              <p><?php echo $item['name']; ?></p>
+              <h4><?php echo $item['caption']; ?></h4>
               <a href="<?php echo ROOT_PATH ?>/content/<?php echo $item['path']; ?>" target="_BLANK">Link</a>
             </div>
             <img src="<?php echo ROOT_PATH ?>/content/<?php echo $item['path']; ?>"

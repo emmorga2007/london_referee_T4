@@ -43,8 +43,11 @@ function deleteFile($id)
     );
 }
 
-function uploadFile()
-{
+function uploadFile($caption)
+{   
+    if(empty($caption)) {
+        return 'Caption required.';
+    }
     $path = "../../content/";
     $target_file = $path . basename($_FILES["fileToUpload"]["name"]);
     $status = true;
@@ -82,12 +85,13 @@ function uploadFile()
         $pdo = Database::getInstance()->getConnection();
 
         // Add File to database
-        $add_image_query = 'INSERT INTO tbl_content (name, path) VALUES (:name, :path)';
+        $add_image_query = 'INSERT INTO tbl_content (name, path, caption) VALUES (:name, :path, :caption)';
         $add_image = $pdo->prepare($add_image_query);
         $add_image->execute(
             array(
         ':name'=>$_FILES["fileToUpload"]["name"],
-        ':path'=>$_FILES["fileToUpload"]["name"]
+        ':path'=>$_FILES["fileToUpload"]["name"],
+        ':caption'=>$caption
         )
         );
     

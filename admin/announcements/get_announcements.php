@@ -1,6 +1,6 @@
 <?php
 
-require_once '../load.php';
+require_once '../../load.php';
 
     $announcements = array();
 
