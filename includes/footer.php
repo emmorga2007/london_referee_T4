@@ -25,7 +25,7 @@
 
     <ul>
         <li>
-            <a href="<?php echo ROOT_PATH .'/events.php'?>">Events</a>
+            <a href="<?php echo ROOT_PATH .'/events.php'?>">Announcements</a>
         </li>
         <li>
             <a href="<?php echo ROOT_PATH .'/contact.php'?>">Contact</a>

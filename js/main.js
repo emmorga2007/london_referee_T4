@@ -47,7 +47,7 @@ import { fetchData } from "./components/DataMiner.js";
         components: {
         }
 
-    }).$mount("#app")
+    }).$mount("#app");
 
 
 

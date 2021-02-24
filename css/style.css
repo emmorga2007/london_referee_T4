@@ -204,7 +204,7 @@ header nav ul li:last-of-type {
 
 .scene {
   grid-area: 1/2/1/4;
-  background: url(../images/rink.jpg) center right/cover;
+  background: url(../images/heroImg.jpg) center right/cover;
   z-index: 0;
   overflow: hidden;
 }
@@ -420,7 +420,7 @@ header nav ul li:last-of-type {
 .partner-img-con img {
   max-height: 100px;
   max-width: 200px;
-  padding: 1rem;
+  padding: 2rem 1rem;
 }
 
 .announcements-con {
