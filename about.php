@@ -40,7 +40,7 @@ require_once './load.php';
     <section class="brief-con">
       <div class="brief-info">
         <h2>History Of LRG</h2>
-        <p>London referee Group was found in 1887 before hockey was even invented to make sure that when it was invented it would be fair and safe for the players. We continue that tradition to this day. Ontario is full of hoodlems and roughieans and we need then to stay in line so our refs need to be tough. we make sure they are stong enough to beat up any player that gets out of line. If they cant handle I'll go in there myself and show those Chads not to Fuck with us.</p>
+        <p>London referee Group was found in 1887 before hockey was even invented to make sure that when it was invented it would be fair and safe for the players. We continue that tradition to this day. Ontario is full of hoodlems and roughieans and we need then to stay in line so our refs need to be tough. we make sure they are stong enough to beat up any player that gets out of line.</p>
         <div class="includes">
           <span>Integrity</span>
           <span>Sportsmanship</span>
