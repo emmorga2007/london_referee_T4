@@ -16,7 +16,7 @@ p, a{@include copyFont();}
     display: flex;
     flex-grow: 0;
     border-radius: $rad;
-    background: $black;
+    @include blackGradient();
     width: max-content;
     a{padding: .5rem 2rem;}
 }

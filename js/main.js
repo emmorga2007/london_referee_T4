@@ -8,7 +8,8 @@ import { fetchData } from "./components/DataMiner.js";
             images: [],
             currentImg:{},
             showLightbox: false,
-            showDropdown: false
+            showDropdown: false,
+            showTheNav: false
         },
 
         mounted: function () {
@@ -43,6 +44,9 @@ import { fetchData } from "./components/DataMiner.js";
             },
             dropdownToggle(){
                 this.showDropdown = this.showDropdown ? false : true;
+            },
+            showNav() {
+                this.showTheNav = this.showTheNav ? false : true;
             }
         },
 

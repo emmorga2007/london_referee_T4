@@ -1,0 +1,175 @@
+header nav{
+    height: 3rem;
+    padding:1.5rem 2rem 1.5rem 5rem;
+    background-color:$grey;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    ul{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      li{
+        margin:0 .5rem;
+        position: relative;
+        a{display: block; padding:.5rem;}
+      }
+
+      li, .sub-menu a{
+        &::after{@include pseudoLine();}
+        &:hover::after{@include drawLine();}
+      }
+
+    }
+
+    .cta-button{
+      @include redGradient();
+      margin-left:1rem;
+      &::after{height:0;}
+      a{margin:0; &::after{height: 0;}}
+    }
+}
+
+.dropdown{
+  position: relative;
+  cursor: pointer;
+
+  .drop-toggle{
+    display: flex;
+    align-items:center;
+  }
+  .arrow{
+    margin-left: .5rem;
+    width:8px;
+    height:8px;
+    border-bottom: 3px solid $highlight;
+    border-right: 3px solid $highlight;
+    transition: all 200ms ease-in-out;
+    transform:translateY(-2px) rotate(45deg);
+    &.flip{transform:translateY(4px) rotate(-135deg);}
+  }
+
+  .sub-menu{
+    background: $grey;
+    text-align: right;
+
+    display: none;
+    flex-direction: column;
+
+    position: absolute;
+    right: 0;
+    top: 2.5rem;
+    z-index: 2;
+    a{position: relative;}
+
+    &.showFlex{display: flex;}
+  }
+
+}
+
+
+
+@media screen and (max-width:1024px){
+  header nav {
+    position: relative;
+    ul{
+        background-color: $grey;
+        width:100%;
+
+        position: absolute;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        flex-direction: column;
+
+        transition: all 300ms ease-in-out;
+        transform: translateY(-100%);
+        &.showNav{transform: translateY(0);}
+
+        li{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            a{display: block; padding:1rem 0;}
+        }
+    }
+    .cta-button{display: none;}
+
+    .nav-btn {
+        position: absolute;
+        z-index: 100;
+        right: 0rem;
+        width: 3rem;
+        margin: 0 2rem;
+        display: flex;
+        padding: 1rem;
+        cursor: pointer;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .bar{
+
+            margin:.5rem; 
+            height: .4rem;
+            background: $white;
+            display: block;
+        } 
+        .bar:first-of-type {width:80px;}
+        .bar:last-of-type {width:40px;}
+
+        &:hover{.bar {
+            background: $highlight;
+            transform-origin: center;
+            transition: all 300ms ease-out;
+        }}
+
+        &.showNav{
+            top: 1rem;
+            right: 1rem;
+            .bar{ width: 25px; height: .3rem;}
+            .bar:first-of-type {transform: rotate(45deg);}
+            .bar:last-of-type {transform: rotate(-45deg) translate(.9rem, -.9rem);}
+        }
+    }
+
+
+    .dropdown{
+        position: unset;
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+
+        .drop-toggle{
+            position: relative;
+            width:100%;
+            justify-content: center;
+            &::after{@include pseudoLine();}
+            &:hover::after{@include drawLine();}
+
+            &.line::after{@include drawLine();}
+        }
+
+        &::after{height: 0;}
+
+        .sub-menu{
+            background: $black;
+            width: 100%;
+            position: unset;
+            text-align: center;
+            a{position: relative; display: block;}
+        }
+    }
+
+}
+
+}
+
+
+
+
