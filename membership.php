@@ -21,7 +21,7 @@ require_once './load.php';
 <body>
 
   <h1 class="hidden">Programs</h1>
-  <main>
+  <main id="app">
     <header class="main-header">
       <h2 class="hidden">Header</h2>
 
@@ -82,7 +82,6 @@ require_once './load.php';
     <?php include_once './includes/footer.php' ?>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
   <script src="js/main.js" type="module"></script>
 </body>
 </html>

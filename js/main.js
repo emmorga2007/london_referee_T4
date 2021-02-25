@@ -7,7 +7,8 @@ import { fetchData } from "./components/DataMiner.js";
             announcements:[],
             images: [],
             currentImg:{},
-            showLightbox: false
+            showLightbox: false,
+            showDropdown: false
         },
 
         mounted: function () {
@@ -31,9 +32,7 @@ import { fetchData } from "./components/DataMiner.js";
         },
 
         updated: function () {
-            console.log(this.images);
-            console.log(this.currentImg);
-            console.log(this.showLightbox);
+            console.log(this.showDropdown);
         },
 
         methods: {
@@ -42,6 +41,9 @@ import { fetchData } from "./components/DataMiner.js";
                 this.showLightbox = this.showLightbox ? false : true;
                 this.currentImg = target;
             },
+            dropdownToggle(){
+                this.showDropdown = this.showDropdown ? false : true;
+            }
         },
 
         components: {
@@ -50,23 +52,20 @@ import { fetchData } from "./components/DataMiner.js";
     }).$mount("#app");
 
 
+    var scenes = document.querySelectorAll('.scene');
+    scenes.forEach(scene => {
+        let parallaxInstance = new Parallax(scene);
+    })
 
-
-var scenes = document.querySelectorAll('.scene');
-scenes.forEach(scene => {
-    let parallaxInstance = new Parallax(scene);
-})
-
-function scrollAnimation(){
-    let logo = document.querySelector('.logo-con');
-    if (window.scrollY > 20){
-        logo.classList.add('shrink');
-    }else {
-        logo.classList.remove('shrink');
+    function scrollAnimation(){
+        let logo = document.querySelector('.logo-con');
+        if (window.scrollY > 20){
+            logo.classList.add('shrink');
+        }else {
+            logo.classList.remove('shrink');
+        }
     }
-}
 
-window.addEventListener('scroll', scrollAnimation);
-
+    window.addEventListener('scroll', scrollAnimation);
 
 })();
