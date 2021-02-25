@@ -28,8 +28,8 @@ require_once './load.php';
 
         <div class="landing-info">
           <h2>
-            <span class="dark-text">about</span><br>
-            <span class="big-text">referees</span>
+            <span class="dark-text">the</span><br>
+            <span class="big-text">referee</span>
           </h2>
           <p>A referee is responsible for the general supervision of the game and can be identified by the red or orange armbands. Under most officiating systems, the referee is the only official with the authority to assess penalties for violations of the rules.</p>
         </div>
@@ -62,6 +62,8 @@ require_once './load.php';
 
     <section class="quote-con">
       <div class="quote">
+        <p>"The goal of the Referee is to not be mentioned. <br>
+          If you can achieve this, it's been a great game"</p>
       </div>
     </section>
 

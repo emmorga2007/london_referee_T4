@@ -1,6 +1,6 @@
 .partner-con{
     background: url(../images/ref_banner3.jpg) no-repeat center /cover fixed;
-    padding:3rem;
+    padding:5rem;
     min-height: 50vh;
 
     display: flex;
@@ -18,7 +18,12 @@
     img{
         max-height:100px;
         max-width: 200px;
-        padding: 2rem 1rem;
+        padding: 2rem 1rem 0 1rem;
     }
 }
 
+@media screen and (max-width: 600px){
+    .partner-con{
+        padding: 5rem 2rem;
+    }
+}
