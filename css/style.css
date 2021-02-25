@@ -294,8 +294,10 @@ header nav {
 }
 header nav ul {
   display: flex;
+  flex-grow: 1;
   flex-direction: row;
   align-items: center;
+  justify-content: flex-end;
 }
 header nav ul li {
   margin: 0 0.5rem;

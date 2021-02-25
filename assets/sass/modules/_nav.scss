@@ -10,8 +10,10 @@ header nav{
 
     ul{
       display: flex;
+      flex-grow: 1;
       flex-direction: row;
       align-items: center;
+      justify-content: flex-end;
       li{
         margin:0 .5rem;
         position: relative;
