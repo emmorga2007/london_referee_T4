@@ -18,7 +18,7 @@ require_once './load.php';
 
 </head>
 <body>
-  <main>
+  <main id="app">
     <header class="main-header">
       <?php include_once './includes/nav.php' ?>
 

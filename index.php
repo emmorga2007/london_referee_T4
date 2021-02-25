@@ -18,7 +18,7 @@ require_once './load.php';
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <main>
+  <main id="app">
     <header class="main-header home">
       <h2 class="hidden">Header</h2>
 

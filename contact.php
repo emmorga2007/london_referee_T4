@@ -19,7 +19,7 @@ require_once './load.php';
 
 </head>
 <body>
-  <main>
+  <main id="app">
     <header class="main-header">
       <h2 class="hidden">Header</h2>
 
@@ -91,5 +91,7 @@ require_once './load.php';
     <!--! Footer -->
     <?php include_once './includes/footer.php' ?>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="js/main.js" type="module"></script>
 </body>
 </html>
