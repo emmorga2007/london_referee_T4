@@ -45,13 +45,19 @@
 @media screen and (max-width:880px){
 
   .footer{
-    padding:5rem 2rem 2rem 2rem;
-    ul{width:100vw;align-content: space-between;}
-
+    padding:5rem 1.5rem 2rem 1.5rem;
+    ul{
+      width:100vw;
+      align-content: space-between;
+    }
   }
 
   .footer-left{order: 1;}
 
   .footer-logo{order: 2;}
 
+}
+
+@media screen and (max-width:500px){
+  .footer ul {max-height: 250px;}
 }
