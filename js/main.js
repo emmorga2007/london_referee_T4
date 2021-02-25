@@ -13,7 +13,7 @@ import { fetchData } from "./components/DataMiner.js";
         mounted: function () {
             console.log("Vue is mounted, trying a fetch for the initial data");
 
-            fetchData("./config/getGallery.php")
+            fetchData("./admin/content/get_content.php")
                 .then(data => {
                     data.forEach(image => {
                         this.images.push(image);
@@ -21,7 +21,7 @@ import { fetchData } from "./components/DataMiner.js";
                 })
                 .catch(err => console.error(err));
 
-            fetchData("./config/getAnnouncements.php")
+            fetchData("./admin/announcements/get_announcements.php")
                 .then(data => {
                     data.forEach(announcement => {
                         this.announcements.push(announcement);

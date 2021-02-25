@@ -1,2 +1,8 @@
+<<<<<<< HEAD
 /content/*
 !/content/.gitkeep
+=======
+# /content/*
+# !/content/.gitkeep
+/css/*
+>>>>>>> ae55be2178f7b4edefd651ef6be4003e79400168
