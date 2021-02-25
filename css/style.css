@@ -94,7 +94,17 @@ p, a {
   display: flex;
   flex-grow: 0;
   border-radius: 0.5rem;
-  background: #141416;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#403f3f+0,1e1e1e+100 */
+  background: #403f3f;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #403f3f 0%, #1e1e1e 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #403f3f 0%, #1e1e1e 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #403f3f 0%, #1e1e1e 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#403f3f", endColorstr="#1e1e1e",GradientType=0 );
+  /* IE6-9 */
   width: max-content;
 }
 .cta-button a {
@@ -103,91 +113,6 @@ p, a {
 
 .highlight {
   color: #c72323;
-}
-
-header nav {
-  height: 3rem;
-  padding: 1.5rem 2rem 1.5rem 5rem;
-  background-color: #232326;
-  color: #F5F5FF;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  color: #F5F5FF;
-  font-family: "cabin", Helvetica, Arial, sans-serif;
-}
-header nav ul {
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-header nav ul li a {
-  padding: 0.5rem 0rem;
-  margin: 0 1rem;
-  position: relative;
-}
-header nav ul li a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 3px;
-  background: #c72323;
-  transition: all 300ms ease-in-out;
-}
-header nav ul li a:hover::after {
-  width: 100%;
-}
-header nav ul li:last-of-type {
-  margin-left: 15px;
-}
-header nav .cta-button {
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#a20808+0,f30c0c+100 */
-  background: #a20808;
-  /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #a20808 0%, #f30c0c 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, #a20808 0%, #f30c0c 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, #a20808 0%, #f30c0c 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a20808", endColorstr="#f30c0c",GradientType=1 );
-  /* IE6-9 fallback on horizontal gradient */
-}
-
-.dropdown {
-  position: relative;
-  cursor: pointer;
-}
-.dropdown .drop-toggle {
-  display: flex;
-  align-items: center;
-}
-.dropdown .drop-toggle .arrow {
-  width: 10px;
-  height: 10px;
-  border-bottom: 3px solid #c72323;
-  border-right: 3px solid #c72323;
-  transform: translateX(-8px) rotate(45deg);
-}
-.dropdown .sub-menu {
-  display: none;
-  right: 0;
-  top: 2.5rem;
-  text-align: right;
-  background: #232326;
-  position: absolute;
-  flex-direction: column;
-  z-index: 10;
-}
-.dropdown .sub-menu a {
-  margin-top: 0.5rem;
-}
-.dropdown .sub-menu.showFlex {
-  display: flex;
 }
 
 .main-header {
@@ -300,10 +225,6 @@ header nav .cta-button {
 }
 
 @media screen and (max-width: 1024px) {
-  header nav ul {
-    display: none;
-  }
-
   .landing {
     grid-template-columns: 50vw 1fr 30vw;
   }
@@ -362,6 +283,218 @@ header nav .cta-button {
     top: 2rem;
   }
 }
+header nav {
+  height: 3rem;
+  padding: 1.5rem 2rem 1.5rem 5rem;
+  background-color: #232326;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+header nav ul li {
+  margin: 0 0.5rem;
+  position: relative;
+}
+header nav ul li a {
+  display: block;
+  padding: 0.5rem;
+}
+header nav ul li::after, header nav ul .sub-menu a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #c72323;
+  transition: all 300ms ease-in-out;
+}
+header nav ul li:hover::after, header nav ul .sub-menu a:hover::after {
+  width: 100%;
+}
+header nav .cta-button {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#a20808+0,f30c0c+100 */
+  background: #a20808;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #a20808 0%, #f30c0c 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #a20808 0%, #f30c0c 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #a20808 0%, #f30c0c 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a20808", endColorstr="#f30c0c",GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+  margin-left: 1rem;
+}
+header nav .cta-button::after {
+  height: 0;
+}
+header nav .cta-button a {
+  margin: 0;
+}
+header nav .cta-button a::after {
+  height: 0;
+}
+
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+.dropdown .drop-toggle {
+  display: flex;
+  align-items: center;
+}
+.dropdown .arrow {
+  margin-left: 0.5rem;
+  width: 8px;
+  height: 8px;
+  border-bottom: 3px solid #c72323;
+  border-right: 3px solid #c72323;
+  transition: all 200ms ease-in-out;
+  transform: translateY(-2px) rotate(45deg);
+}
+.dropdown .arrow.flip {
+  transform: translateY(4px) rotate(-135deg);
+}
+.dropdown .sub-menu {
+  background: #232326;
+  text-align: right;
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 2.5rem;
+  z-index: 2;
+}
+.dropdown .sub-menu a {
+  position: relative;
+}
+.dropdown .sub-menu.showFlex {
+  display: flex;
+}
+
+@media screen and (max-width: 1024px) {
+  header nav {
+    position: relative;
+  }
+  header nav ul {
+    background-color: #232326;
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    transition: all 300ms ease-in-out;
+    transform: translateY(-100%);
+  }
+  header nav ul.showNav {
+    transform: translateY(0);
+  }
+  header nav ul li {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  header nav ul li a {
+    display: block;
+    padding: 1rem 0;
+  }
+  header nav .cta-button {
+    display: none;
+  }
+  header nav .nav-btn {
+    position: absolute;
+    z-index: 100;
+    right: 0rem;
+    width: 3rem;
+    margin: 0 2rem;
+    display: flex;
+    padding: 1rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  header nav .nav-btn .bar {
+    margin: 0.5rem;
+    height: 0.4rem;
+    background: #F5F5FF;
+    display: block;
+  }
+  header nav .nav-btn .bar:first-of-type {
+    width: 80px;
+  }
+  header nav .nav-btn .bar:last-of-type {
+    width: 40px;
+  }
+  header nav .nav-btn:hover .bar {
+    background: #c72323;
+    transform-origin: center;
+    transition: all 300ms ease-out;
+  }
+  header nav .nav-btn.showNav {
+    top: 1rem;
+    right: 1rem;
+  }
+  header nav .nav-btn.showNav .bar {
+    width: 25px;
+    height: 0.3rem;
+  }
+  header nav .nav-btn.showNav .bar:first-of-type {
+    transform: rotate(45deg);
+  }
+  header nav .nav-btn.showNav .bar:last-of-type {
+    transform: rotate(-45deg) translate(0.9rem, -0.9rem);
+  }
+  header nav .dropdown {
+    position: unset;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  header nav .dropdown .drop-toggle {
+    position: relative;
+    width: 100%;
+    justify-content: center;
+  }
+  header nav .dropdown .drop-toggle::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #c72323;
+    transition: all 300ms ease-in-out;
+  }
+  header nav .dropdown .drop-toggle:hover::after {
+    width: 100%;
+  }
+  header nav .dropdown .drop-toggle.line::after {
+    width: 100%;
+  }
+  header nav .dropdown::after {
+    height: 0;
+  }
+  header nav .dropdown .sub-menu {
+    background: #141416;
+    width: 100%;
+    position: unset;
+    text-align: center;
+  }
+  header nav .dropdown .sub-menu a {
+    position: relative;
+    display: block;
+  }
+}
 .brief-con {
   min-height: 50vh;
   padding: 5rem;
@@ -377,7 +510,17 @@ header nav .cta-button {
   margin: 1.5rem 0;
 }
 .brief-con .brief-info .cta-button {
-  background: #c72323;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#a20808+0,f30c0c+100 */
+  background: #a20808;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #a20808 0%, #f30c0c 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #a20808 0%, #f30c0c 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #a20808 0%, #f30c0c 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a20808", endColorstr="#f30c0c",GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
 }
 .brief-con:nth-of-type(even) {
   background: url(../images/ref_banner3.jpg) no-repeat center/cover fixed;
@@ -1100,3 +1243,5 @@ header nav .cta-button {
   border-radius: 0.5rem;
   padding: 1rem;
 }
+
+/*# sourceMappingURL=style.css.map */

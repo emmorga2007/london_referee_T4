@@ -45,7 +45,7 @@ require_once './load.php';
             <span class="big-text">stripes</span>
           </h2>
 
-          <p>We provide Referee services for leagues all over Ontario! Young and Old, we provide training camps for aspiring Refs. Easily sign up to become part of the London Referee's Group</p>
+          <p>We provide Referee services for leagues all over Ontario! Young and Old, we provide training camps for aspiring Refs. Easily sign up to become part of the London Referees Group</p>
           <!-- <div class="cta-button"><a href="">Learn More</a></div> -->
         </div>
 
@@ -97,7 +97,7 @@ require_once './load.php';
         </div>
       </div>
       <div class="angle-img left">
-        <img src="images/maleRef.png" alt="">
+        <img src="images/young_ref.png" alt="">
       </div>
     </section>
 
@@ -123,7 +123,7 @@ require_once './load.php';
 
     <section class="partner-con">
       <div class="partner-info">
-        <h2>Who We Serve</h2>
+        <h2>partners</h2>
       </div>
 
   <!-- Make Vue or PHP Render List -->
