@@ -19,7 +19,7 @@ require_once './load.php';
 </head>
 <body>
   <main>
-    <header class="main-header">
+    <header class="main-header home">
       <h2 class="hidden">Header</h2>
 
       <?php include_once './includes/nav.php' ?>

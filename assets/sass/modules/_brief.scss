@@ -26,3 +26,15 @@
         margin-right: 1rem;
     }
 }
+
+@media screen and (max-width:880px) {
+    .brief-con {
+        background: url(../images/ref_banner8.jpg) no-repeat center right /cover fixed;
+        .brief-info{width:unset;}
+    }
+    .includes span{color:$black; font-weight: 700;}
+}
+
+@media screen and (max-width:500px) {
+    .brief-con{padding: 5rem 2rem;}
+}

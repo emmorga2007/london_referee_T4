@@ -1,7 +1,7 @@
 .gallery-con{
     padding: 6rem 0;
     background: url(../images/ref_banner.jpg) no-repeat bottom center /cover fixed;
-    h2{padding:3rem; padding-bottom:1rem}
+    h2{padding:3rem;}
 }
 .main-gallery{
     display: grid;
@@ -40,20 +40,22 @@
     transition: all 300ms ease-in-out;
     &:hover{transform:scale(1);}
 
-    p{padding:.5rem 1rem;}
+    p{padding:1rem;}
 }
 
 .lightbox {
     background:rgba(0,0,0,0.8);
+    height:100%;
     position: fixed;
-    width:100vw;
-    height:100vh;
     top:0;
     left:0;
+
     display: none;
     justify-content:center;
     align-items: center;
+
     &.show-lb{display:flex}
+
     .lb-content{
         position: relative;
         width:100%;
@@ -62,12 +64,16 @@
         justify-content: space-between;
         align-items: center;
         img{
-            max-width:100%;
-            max-height: 100%;
+            max-width:75%;
+            max-height: 80%;
         }
         p{
-            font-size: 20vh;
-            padding:3rem;
+            height:66%;
+            font-size:3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
             cursor: pointer;
             &:hover{color:$highlight;}
         }
@@ -75,7 +81,7 @@
             @include copyFont(4rem);
             color:$white;
             position: absolute;
-            right: 3rem;
+            right: 1rem;
             top: 0;
             transform: rotate(45deg);
             cursor: pointer;
@@ -84,3 +90,14 @@
     }
 }
 
+@media screen and (max-width:880px){
+    .gallery-con {
+        background: url(../images/ref_banner8.jpg) no-repeat bottom center /cover fixed;
+        h2{padding:0 0 3rem 5rem;}
+    }
+}
+
+@media screen and (max-width:500px){
+    .gallery-con h2{padding:0 0 3rem 2rem;}
+
+}

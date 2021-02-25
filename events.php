@@ -32,8 +32,8 @@ require_once './load.php';
 
         <div class="landing-info">
           <h2>
-            <span class="dark-text">what's</span><br>
-            <span class="big-text">New</span>
+            <span class="dark-text">up</span> &<br>
+            <span class="big-text">coming</span>
           </h2>
           <p>Find out what's happening in the London Referee community. Everything to keep you up to date: Upcoming events, posts from the team, and new policies and procedures.</p>
         </div>
@@ -56,8 +56,8 @@ require_once './load.php';
     </section>
 
     <section class="announcements-con">
-      <h2>Announcements</h2>
-      <div v-for="item in announcements" class="main-announcements">
+      <h2>news</h2>
+      <div v-for="item in announcements" class="announcement">
         <h3>{{item.title}}</h3>
         <p>{{item.body}}</p>
         <!-- Simple slice method to remove the time.  And leave only the date -->

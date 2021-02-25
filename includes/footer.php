@@ -19,13 +19,13 @@
             <a href="<?php echo ROOT_PATH .'/about.php'?>">About</a>
         </li>
         <li>
-            <a href="<?php echo ROOT_PATH .'/junior.php'?>">Programs</a>
+            <a href="<?php echo ROOT_PATH .'/junior.php'?>">Juniors</a>
         </li>
-    </ul>
-
-    <ul>
         <li>
-            <a href="<?php echo ROOT_PATH .'/events.php'?>">Announcements</a>
+            <a href="<?php echo ROOT_PATH .'/membership.php'?>">Membership</a>
+        </li>
+        <li>
+            <a href="<?php echo ROOT_PATH .'/events.php'?>">News</a>
         </li>
         <li>
             <a href="<?php echo ROOT_PATH .'/contact.php'?>">Contact</a>
@@ -33,24 +33,14 @@
         <li>
             <a href="<?php echo ROOT_PATH .'/contact.php'?>">Apply Now</a>
         </li>
-    </ul>
-
-    <ul>
         <li>
             <a href="<?php echo ROOT_PATH .'/admin/admin_login.php'?>">Admin Login</a>
         </li>
-        <li>
-            <a href="<?php echo ROOT_PATH .'/contact.php'?>">Contact</a>
-        </li>
-        <li>
-            <a href="<?php echo ROOT_PATH .'/contact.php'?>">Apply Now</a>
-        </li>
     </ul>
 
-    <ul>
-        <li>
-            <a href="index.php"><img src="<?php echo ROOT_PATH .'/images/LRGlogo-v.svg'?>" alt=""></a>
-        </li>
-    </ul>
+        <a class="footer-logo" href="index.php">
+            <img src="<?php echo ROOT_PATH .'/images/LRGlogo-v.svg'?>" alt="">
+        </a>
+
 </footer>
 <p class="copyright">Copyright LRG © <?php echo date('Y');?></p>

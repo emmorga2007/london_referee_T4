@@ -22,7 +22,7 @@
     }
 
     .angle-info{
-        background: $highlight;
+        @include redGradient();
         display: flex;
         padding: 5rem;
         flex-direction: column;
@@ -50,9 +50,34 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    p{@include copyFont(1.75rem, false, i)}
+    p{
+        @include copyFont(1.75rem, false, i); 
+        line-height:2rem;
+    }
 }
 
+@media screen and (max-width: 880px){
+
+    .angle-con {
+        .angle-img{display: none;}
+        .angle-info{
+            background: url(../images/ref_banner6.jpg) no-repeat center /cover fixed;
+            padding: 5rem;
+            &.right, &.left{
+                padding: 5rem ;
+                clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+            }
+            &.left{background: url(../images/red_ref_banner5.jpg) no-repeat center /cover fixed;}
+        }
+    }
+
+    .quote-con{display: none;}
+}
+@media screen and (max-width: 500px){
+    .angle-con .angle-info{
+        &.right, &.left{padding: 5rem 2rem;}
+    }
+}
 
 // ! =========================GRID VERSION========================================
 
