@@ -24,7 +24,7 @@
     .angle-info{
         background: $highlight;
         display: flex;
-        padding: 3rem;
+        padding: 5rem;
         flex-direction: column;
         justify-content: center;
         h2{margin-bottom: 1.5rem}
@@ -45,10 +45,7 @@
 
 .quote-con{
     min-height:25vh;
-    background-image: url(../images/quote_banner.jpg);
-    background-size: cover;
-    background-position: left center;
-    background-attachment: fixed;
+    background: url(../images/ref_banner2.jpg) no-repeat center /cover fixed;
     text-align: center;
     display: flex;
     align-items: center;
