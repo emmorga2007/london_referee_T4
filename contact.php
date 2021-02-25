@@ -21,10 +21,69 @@ require_once './load.php';
 <body>
   <main>
     <header class="main-header">
+      <h2 class="hidden">Header</h2>
+
       <?php include_once './includes/nav.php' ?>
+
+      <div class="landing">
+
+        <div class="landing-img contact"></div>
+
+        <div class="landing-info">
+          <h2>
+            <span class="dark-text">contact</span><br>
+            <span class="big-text">us</span>
+          </h2>
+          <p>If you are interested in becoming a hockey official, enter the required information and send to get your officiating career started</p>
+        </div>
+
+      </div>
     </header>
 
-    <h1>Contact</h1>
+    <section class="contact-con">
+      <div class="form-con">
+        <form id="contact-form" class="contact" method="post" action="">
+
+          <div class="input-con">
+            <label for="subject">Subject</label>
+            <select name="subject" id="subject">
+              <option selected value="General Inquiry">General Inquiry</option>
+              <option value="Junior Mentorship">Junior Mentorship</option>
+              <option value="Membership Application">Membership Application</option>
+            </select>
+          </div>
+
+          <div class="input-con">
+            <label for="name">Your Name</label>
+            <input type="text" name="name" id="name" placeholder="your name" required>
+            <p>Invalid or empty, please try again.</p>
+          </div>
+
+          <div class="input-con">
+            <label for="email">Your Name</label>
+            <input type="email" name="email" id="email" placeholder="email" required>
+            <p>Invalid or empty, please try again.</p>
+          </div>
+
+          <div class="input-con">
+            <label for="subject">Subject</label>
+            <textarea id="message" name="message" placeholder="message" required></textarea>
+            <p>Invalid or empty, please try again.</p>
+          </div>
+
+          <button class="cta-button"><a href="">Send</a></button>
+
+        </form>
+      </div>
+      <div>
+        <div class="contact-info">
+          <p>Are you interested in becoming a member? Want to join our Junior Mentorship program? Or a general inquiry? Feel free to send us a message.<br><br>
+            You will hear back from us within an amount of time. Are you interested in becoming a member? Want to join our Junior Mentorship program? Or a general inquiry? Feel free to send us a message.<br><br>
+            Privacy information Are you interested in becoming a member? Want to join our Junior Mentorship program? Or a general inquiry? Feel free to send us a message.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <!--! Footer -->
     <?php include_once './includes/footer.php' ?>

@@ -1,8 +1,7 @@
 .brief-con{
     min-height:50vh;
-    padding: 5rem 3rem;
-
-background: url(../images/ref_banner.jpg) no-repeat center /cover fixed;
+    padding: 5rem;
+    background: url(../images/ref_banner.jpg) no-repeat center /cover fixed;
 
     display: flex;
     align-items: center;
@@ -11,6 +10,9 @@ background: url(../images/ref_banner.jpg) no-repeat center /cover fixed;
         width:66%;
         p{margin: 1.5rem 0;}
         .cta-button{background: $highlight;}
+    }
+    &:nth-of-type(even){
+        background: url(../images/ref_banner3.jpg) no-repeat center /cover fixed;
     }
 }
 

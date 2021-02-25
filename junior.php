@@ -37,7 +37,7 @@ require_once './load.php';
             <span class="big-text">Program</span>
           </h2>
           <p>If you are interested in becoming a hockey official, this is for you! It will provide all the information needed to get your officiating career started</p>
-          <div class="cta-button"><a href="">Sign Up</a></div>
+          <div class="cta-button"><a href="">Join The Team</a></div>
         </div>
 
       </div>
