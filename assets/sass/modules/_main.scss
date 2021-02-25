@@ -6,7 +6,10 @@ body {
     margin: 0;
     padding: 0;
     max-width:2000px;
+    min-width: 325px;
 }
+
+main{width:100%}
 
 h2{@include headerFont();}
 
@@ -23,4 +26,8 @@ p, a{@include copyFont();}
 
 .highlight {
     color: $highlight;
+}
+
+@media screen and (max-width:500px){
+    h2{font-size:2.5rem;}
 }

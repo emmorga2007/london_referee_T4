@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.3
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: Feb 24, 2021 at 07:01 PM
--- Server version: 5.7.26
--- PHP Version: 7.4.2
+-- Host: 127.0.0.1:3306
+-- Generation Time: Feb 25, 2021 at 09:21 PM
+-- Server version: 5.7.31
+-- PHP Version: 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -26,19 +27,24 @@ SET time_zone = "+00:00";
 -- Table structure for table `tbl_announcements`
 --
 
-CREATE TABLE `tbl_announcements` (
-  `id` int(11) NOT NULL,
-  `title` varchar(100) NOT NULL,
+DROP TABLE IF EXISTS `tbl_announcements`;
+CREATE TABLE IF NOT EXISTS `tbl_announcements` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(150) NOT NULL,
   `body` text NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `date` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_announcements`
 --
 
 INSERT INTO `tbl_announcements` (`id`, `title`, `body`, `date`) VALUES
-(21, 'New Website!', 'Check out our new website!  Developed by Gavin and Nate.', '2021-02-23 20:56:44');
+(1, 'Junior Program Level I Training\r\n', 'Serving London and area. If you are currently looking for an organization to referee your hockey league, our team would like the opportunity to assist ', ''),
+(2, 'referees matter', 'Referees or officials in the two-person system are an essential element in organized hockey at all levels. Officials keep the game organized and fun, while providing players, parents and coaches clarification of the rules.\r\n', ''),
+(3, 'our members are key', 'We strive to develop and deliver hockey resources that assist team, league and tournament organiz-ers across Canada and around the world.', ''),
+(4, 'steps to Certification', 'Certification at all levels, except Level I, is a two-part process involving clinical and practical assessment. The official must attend all clinic sessions and obtain the minimum mark on the examination.', '');
 
 -- --------------------------------------------------------
 
@@ -46,13 +52,15 @@ INSERT INTO `tbl_announcements` (`id`, `title`, `body`, `date`) VALUES
 -- Table structure for table `tbl_content`
 --
 
-CREATE TABLE `tbl_content` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `tbl_content`;
+CREATE TABLE IF NOT EXISTS `tbl_content` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(80) NOT NULL,
   `path` text NOT NULL,
   `date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `caption` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `caption` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_content`
@@ -76,8 +84,9 @@ INSERT INTO `tbl_content` (`id`, `name`, `path`, `date_added`, `caption`) VALUES
 -- Table structure for table `tbl_user`
 --
 
-CREATE TABLE `tbl_user` (
-  `user_id` mediumint(8) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `tbl_user`;
+CREATE TABLE IF NOT EXISTS `tbl_user` (
+  `user_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
   `user_fname` varchar(250) NOT NULL,
   `user_name` varchar(250) NOT NULL,
   `user_pass` varchar(255) NOT NULL,
@@ -88,8 +97,9 @@ CREATE TABLE `tbl_user` (
   `user_attempts` int(11) NOT NULL DEFAULT '0',
   `user_total_logins` int(11) NOT NULL DEFAULT '0',
   `user_locked` tinyint(1) NOT NULL DEFAULT '0',
-  `user_level` varchar(2) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `user_level` varchar(2) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_user`
@@ -97,50 +107,7 @@ CREATE TABLE `tbl_user` (
 
 INSERT INTO `tbl_user` (`user_id`, `user_fname`, `user_name`, `user_pass`, `user_email`, `user_date`, `user_ip`, `user_success_date`, `user_attempts`, `user_total_logins`, `user_locked`, `user_level`) VALUES
 (36, 'Admin', 'admin', 'password', 'nate@example.com', '2021-02-17 00:14:57', '127.0.0.1', '2021-02-24 16:28:12', 0, 11, 0, '1');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `tbl_announcements`
---
-ALTER TABLE `tbl_announcements`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_content`
---
-ALTER TABLE `tbl_content`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_user`
---
-ALTER TABLE `tbl_user`
-  ADD PRIMARY KEY (`user_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `tbl_announcements`
---
-ALTER TABLE `tbl_announcements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
-
---
--- AUTO_INCREMENT for table `tbl_content`
---
-ALTER TABLE `tbl_content`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT for table `tbl_user`
---
-ALTER TABLE `tbl_user`
-  MODIFY `user_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
