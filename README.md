@@ -1,11 +1,18 @@
 # London referee
 
-### Sass watch command from project root directory
+## How to use:
+- clone repo
+- upload database to your mysql server with the table named `db_lrg`
+- if on Windows then change password in `config/datatbase.php` to be empty, if on mac change password to root 
+- run the sass watch command below to run create a style.css from the root directory **( NOTE: The reason for this is the compiled css file is not in the repository )**
+- open up weebsite in browser
+
+#### Sass watch command from project root directory
 `sass --watch assets/sass/style.scss:css/style.css --no-source-map`
 
-## Development Credentials
+#### Development Credentials
 Username: `admin`
-Password: `824ZLnkOGO`
+Password: `password`
 
 ### Project Description
 
@@ -14,20 +21,6 @@ Redesigning London Referee Group Website.  Creating a full website with admin ac
 ### Purpose
 
 This website is created for London Referee Group in association with Fanshawe College.  Created by students from *Interactive Media Design*.
-
-### Styles
-**Font:** [Cabin Font](https://fonts.google.com/specimen/Cabin)
-
-**Font Weights:** `Normal`, `Semi Bold`, or `Bold`
-
-**Colors:**
-- Logo Orange `#F05623`
-- Alt Orange `#ED6A21`
-- Blue `#3343B5`
-- Dark Blue `#212564`
-- Dark Grey `#1E1E1E`
-- White `#F5F5FF`
-
 
 ### Pages
 
