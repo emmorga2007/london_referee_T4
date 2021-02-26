@@ -6,6 +6,9 @@
 - if on Windows then change password in `config/datatbase.php` to be empty, if on mac change password to root 
 - run the sass watch command below to run create a style.css from the root directory **( NOTE: The reason for this is the compiled css file is not in the repository )**
 - open up weebsite in browser
+- to test the admin panel use the Development Credentials below
+*Username:* `admin`
+*Password:* `password`
 
 #### Sass watch command from project root directory
 `sass --watch assets/sass/style.scss:css/style.css --no-source-map`
