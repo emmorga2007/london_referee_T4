@@ -42,15 +42,6 @@ require_once './load.php';
 
     <section class="contact-con">
 
-      <div>
-        <div class="contact-info">
-          <p>Are you interested in becoming a member? Want to join our Junior Mentorship program? Or a general inquiry? Feel free to send us a message.<br><br>
-            You will hear back from us within an amount of time. Are you interested in becoming a member? Want to join our Junior Mentorship program? Or a general inquiry? Feel free to send us a message.<br><br>
-            Privacy information Are you interested in becoming a member? Want to join our Junior Mentorship program? Or a general inquiry? Feel free to send us a message.
-          </p>
-        </div>
-      </div>
-
       <div class="form-con">
         <form id="contact-form" class="contact" method="post" action="">
 
@@ -84,6 +75,15 @@ require_once './load.php';
           <button class="cta-button"><a href="">Send</a></button>
 
         </form>
+      </div>
+
+      <div>
+        <div class="contact-info">
+          <p>Are you interested in becoming a member? Want to join our Junior Mentorship program? Or a general inquiry? Feel free to send us a message.<br><br>
+            You will hear back from us within an amount of time. Are you interested in becoming a member? Want to join our Junior Mentorship program? Or a general inquiry? Feel free to send us a message.<br><br>
+            Privacy information Are you interested in becoming a member? Want to join our Junior Mentorship program? Or a general inquiry? Feel free to send us a message.
+          </p>
+        </div>
       </div>
 
     </section>
