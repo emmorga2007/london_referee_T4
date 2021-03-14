@@ -15,18 +15,18 @@ import { fetchData } from "./components/DataMiner.js";
         mounted: function () {
             console.log("Vue is mounted, trying a fetch for the initial data");
 
+            fetchData("./admin/announcements/get_announcements.php")
+            .then(data => {
+                data.forEach(announcement => {
+                    this.announcements.push(announcement);
+                });
+            })
+            .catch(err => console.error(err));
+
             fetchData("./admin/content/get_content.php")
                 .then(data => {
                     data.forEach(image => {
                         this.images.push(image);
-                    });
-                })
-                .catch(err => console.error(err));
-
-            fetchData("./admin/announcements/get_announcements.php")
-                .then(data => {
-                    data.forEach(announcement => {
-                        this.announcements.push(announcement);
                     });
                 })
                 .catch(err => console.error(err));
@@ -60,16 +60,5 @@ import { fetchData } from "./components/DataMiner.js";
     scenes.forEach(scene => {
         let parallaxInstance = new Parallax(scene);
     })
-
-    function scrollAnimation(){
-        let logo = document.querySelector('.logo-con');
-        if (window.scrollY > 20){
-            logo.classList.add('shrink');
-        }else {
-            logo.classList.remove('shrink');
-        }
-    }
-
-    window.addEventListener('scroll', scrollAnimation);
 
 })();

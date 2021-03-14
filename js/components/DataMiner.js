@@ -9,7 +9,7 @@ let errorCodes = {
 async function fetchData(sourceURL) {
     let resource = await fetch(sourceURL).then(response => {
         if (response.status !== 200) {
-            throw new Error(`Who the Hell is Will Robinson? ${response.status}: ${errorCodes[response.status]}`);
+            throw new Error(`Oops! ${response.status}: ${errorCodes[response.status]}`);
         }
         return response;
     });
